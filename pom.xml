@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>se.sundsvall.dept44</groupId>
+		<artifactId>dept44-service-parent</artifactId>
+		<version>1.25</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>se.sundsvall</groupId>
+	<artifactId>api-service-quotation-request</artifactId>
+	<version>1.0</version>
+	<name>api-service-quotation-request</name>
+	<description>Manage quotation requests</description>
+	<properties>
+		<!-- Pipeline properties -->
+		<docker.image.name>ms-quotation-request</docker.image.name>
+		<published.container.port.sandbox>8903</published.container.port.sandbox>
+		<published.container.port.test>8902</published.container.port.test>
+		<published.container.port.production>8901</published.container.port.production>
+		<!-- Service properties -->
+		<lime.version>1.0</lime.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>se.sundsvall.dept44</groupId>
+			<artifactId>dept44-starter-feign</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.hateoas</groupId>
+		    <artifactId>spring-hateoas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+		</dependency>
+		<!-- Generated clients -->
+		<dependency>
+			<groupId>se.sundsvall.generated-clients</groupId>
+			<artifactId>lime-seab</artifactId>
+			<version>${lime.version}</version>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>se.sundsvall.dept44</groupId>
+			<artifactId>dept44-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/se/sundsvall/quotationrequest/Application*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

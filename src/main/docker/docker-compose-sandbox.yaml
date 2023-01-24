@@ -1,0 +1,26 @@
+version: "3"
+services:
+  ms-quotation-request-sandbox:
+    container_name: ms-quotation-request-sandbox
+    image: 'ms-quotation-request:sandbox'
+    links:
+      - 'ms-quotation-request-wiremock-sandbox:wiremock'
+    restart: always
+    build:
+      context: ../../..
+      dockerfile: src/main/docker/Dockerfile
+    ports:
+      - '9071:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: 'sandbox'
+    depends_on:
+      - ms-quotation-request-wiremock-sandbox
+
+  ms-quotation-request-wiremock-sandbox:
+    container_name: ms-quotation-request-wiremock-sandbox
+    image: wiremock/wiremock
+    restart: always
+    expose:
+      - '8080'
+    volumes:
+      - $PWD/src/test/resources/wiremock:/home/wiremock

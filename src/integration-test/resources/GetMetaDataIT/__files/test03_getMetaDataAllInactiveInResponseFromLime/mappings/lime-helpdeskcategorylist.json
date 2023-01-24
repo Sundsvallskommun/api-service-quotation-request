@@ -1,0 +1,19 @@
+{
+	"name": "lime-helpdeskcategorylist",
+	"request": {
+		"method": "GET",
+		"urlPath": "/lime/helpdeskcategory/",
+		"headers": {
+			"x-api-key": {
+				"equalTo": "the-api-key"
+			}
+		}
+	},
+	"response": {
+		"headers": {
+			"Content-Type": "application/hal+json"
+		},
+		"status": 200,
+		"bodyFileName": "test03_getMetaDataAllInactiveInResponseFromLime/responses/lime-helpdeskcategorylist-response.json"
+	}
+}

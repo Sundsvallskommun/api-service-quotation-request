@@ -1,0 +1,26 @@
+{
+	"offices": [
+		{
+			"name": "Kundservice el och fjärrvärme",
+			"id": "1301"
+		},
+		{
+			"name": "Kundservice fjärrvärme",
+			"id": "1401"
+		},
+		{
+			"name": "Ekonomi/kundservice",
+			"id": "1501"
+		}
+	],
+	"helpdeskCategories": [
+		{
+			"name": "Anslutning fjv",
+			"id": "1901"
+		},
+		{
+			"name": "Serviceavtal",
+			"id": "2301"
+		}
+	]
+}

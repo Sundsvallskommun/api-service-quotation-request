@@ -1,0 +1,824 @@
+{
+	"_links": {
+		"self": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/office/"
+		},
+		"next": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/office/?_offset=10"
+		}
+	},
+	"_embedded": {
+		"limeobjects": [
+			{
+				"name": "Nätutbyggnad",
+				"misc": "",
+				"active": false,
+				"_id": 1001,
+				"_timestamp": "2022-09-05T09:41:59.353000+02:00",
+				"_descriptive": "Nätutbyggnad",
+				"_updateduser": 1,
+				"_createduser": 1,
+				"_createdtime": "2010-03-26T13:15:22.197000+01:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1001/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Marknad",
+				"misc": "",
+				"active": false,
+				"_id": 1201,
+				"_timestamp": "2022-10-24T11:04:51.970000+02:00",
+				"_descriptive": "Marknad",
+				"_updateduser": 105701,
+				"_createduser": 1,
+				"_createdtime": "2010-04-07T15:47:29.283000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1201/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Kundservice el och fjärrvärme",
+				"misc": "",
+				"active": false,
+				"_id": 1301,
+				"_timestamp": "2022-09-05T09:41:59.353000+02:00",
+				"_descriptive": "Kundservice el och fjärrvärme",
+				"_updateduser": 1,
+				"_createduser": 1,
+				"_createdtime": "2010-05-06T17:37:49.157000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1301/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Kundservice fjärrvärme",
+				"misc": "",
+				"active": false,
+				"_id": 1401,
+				"_timestamp": "2020-12-21T09:21:13.490000+01:00",
+				"_descriptive": "Kundservice fjärrvärme",
+				"_updateduser": 1,
+				"_createduser": 1,
+				"_createdtime": "2010-06-23T08:19:58.950000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1401/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Ekonomi/kundservice",
+				"misc": "Kundservice för fjärrvärme och återvinning",
+				"active": false,
+				"_id": 1501,
+				"_timestamp": "2022-10-13T13:44:42.157000+02:00",
+				"_descriptive": "Ekonomi/kundservice",
+				"_updateduser": 105701,
+				"_createduser": 1,
+				"_createdtime": "2010-06-23T08:20:15.223000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1501/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Kundservice övriga",
+				"misc": "",
+				"active": false,
+				"_id": 1601,
+				"_timestamp": "2022-10-24T14:25:36.773000+02:00",
+				"_descriptive": "Kundservice övriga",
+				"_updateduser": 105701,
+				"_createduser": 1,
+				"_createdtime": "2010-06-23T08:20:24.943000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1601/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Återvinning",
+				"misc": "",
+				"active": false,
+				"_id": 1701,
+				"_timestamp": "2022-10-04T07:47:33.040000+02:00",
+				"_descriptive": "Återvinning",
+				"_updateduser": 1,
+				"_createduser": 1,
+				"_createdtime": "2010-06-23T16:48:26.123000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1701/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Energitjänster",
+				"misc": "",
+				"active": false,
+				"_id": 1901,
+				"_timestamp": "2022-10-24T11:09:26.840000+02:00",
+				"_descriptive": "Energitjänster",
+				"_updateduser": 105701,
+				"_createduser": 1,
+				"_createdtime": "2010-09-30T17:21:59.053000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/1901/campaign/new/"
+					}
+				}
+			},
+			{
+				"name": "Larm & Signal",
+				"misc": "",
+				"active": false,
+				"_id": 2101,
+				"_timestamp": "2019-04-26T14:01:13.670000+02:00",
+				"_descriptive": "Larm & Signal",
+				"_updateduser": 9001,
+				"_createduser": 1,
+				"_createdtime": "2010-10-19T06:53:55.577000+02:00",
+				"_links": {
+					"limetype": {
+						"href": "https://host.se/lime_test/api/v1/limetype/office/",
+						"name": "office"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/"
+					},
+					"relation_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/coworker/",
+						"name": "coworker"
+					},
+					"relation_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/helpdesk/",
+						"name": "helpdesk"
+					},
+					"relation_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/helpdesktype/",
+						"name": "helpdesktype"
+					},
+					"relation_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/checklistactivitytemplate/",
+						"name": "checklistactivitytemplate"
+					},
+					"relation_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/history/",
+						"name": "history"
+					},
+					"relation_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/checklistactivity/",
+						"name": "checklistactivity"
+					},
+					"relation_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/soschecklistactivity/",
+						"name": "soschecklistactivity"
+					},
+					"relation_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/todo/",
+						"name": "todo"
+					},
+					"relation_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/infotiles/",
+						"name": "infotiles"
+					},
+					"relation_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/campaign/",
+						"name": "campaign"
+					},
+					"new_coworker": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/coworker/new/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/helpdesk/new/"
+					},
+					"new_helpdesktype": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/helpdesktype/new/"
+					},
+					"new_checklistactivitytemplate": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/checklistactivitytemplate/new/"
+					},
+					"new_history": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/history/new/"
+					},
+					"new_checklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/checklistactivity/new/"
+					},
+					"new_soschecklistactivity": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/soschecklistactivity/new/"
+					},
+					"new_todo": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/todo/new/"
+					},
+					"new_infotiles": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/infotiles/new/"
+					},
+					"new_campaign": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/office/2101/campaign/new/"
+					}
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"_links": {
+		"self": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/"
+		},
+		"next": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/?_offset=10"
+		}
+	},
+	"_embedded": {
+		"limeobjects": [
+		]
+	}
+}

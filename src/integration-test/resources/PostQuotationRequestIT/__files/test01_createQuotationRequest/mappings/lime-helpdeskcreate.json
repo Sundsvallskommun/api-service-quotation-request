@@ -1,0 +1,34 @@
+{
+	"name": "lime-helpdeskcreate",
+	"request": {
+		"method": "POST",
+		"urlPath": "/lime/helpdesk/",
+		"headers": {
+			"x-api-key": {
+				"equalTo": "the-api-key"
+			}
+		},
+		"bodyPatterns": [
+			{
+				"equalToJson": {
+					"receivedthrough": {
+						"id": 3759301,
+						"key": "form",
+						"text": "Formulär"
+					},
+					"title": "Installation av elnät",
+					"description": "Joe Doe\nTel: 079 1234567\nEmail: joe.doe@test.se\n\nBeskrivning av installationen",
+					"helpdeskcategory": 1901,
+					"office": 1001
+				}
+			}
+		]
+	},
+	"response": {
+		"headers": {
+			"Content-Type": "application/hal+json"
+		},
+		"status": 200,
+		"bodyFileName": "test01_createQuotationRequest/responses/lime-helpdeskcreate-response.json"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"title": "Installation av elnät",
+	"note": "Beskrivning av installationen",
+	"helpdeskId": "1901",
+	"officeId": "1001",
+	"contactDetails": {
+		"firstName": "Joe",
+		"surname": "Doe",
+		"phoneNumber": "079 1234567",
+		"emailAddress": "joe.doe@test.se"
+	}
+}
