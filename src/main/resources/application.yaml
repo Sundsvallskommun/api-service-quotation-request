@@ -1,0 +1,60 @@
+#===========================================
+# General settings
+#===========================================
+spring:
+  application:
+    name: api-quotation-request
+  cache:
+    cache-names: helpdeskcategories,offices
+    caffeine.spec: maximumSize=1000,expireAfterWrite=86400s
+
+#----------------------------------------
+# Spring Boot Admin
+#----------------------------------------
+  boot:
+    admin:
+      client:
+        instance:
+          management-base-url: ${service.base.url}
+          service-base-url: ${service.base.url}
+
+#-------------------------------------------
+# Log config
+#-------------------------------------------
+logging:
+  level:
+    root: INFO
+
+#-------------------------------------------
+# OpenAPI
+#-------------------------------------------
+openapi:
+  name: ${spring.application.name}
+  title: ${spring.application.name}
+  version: '@project.version@'
+
+#-------------------------------------------
+# Swagger-UI
+#-------------------------------------------
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+
+#===========================================
+# Integration settings
+#===========================================
+#-------------------------------------------
+# Lime integration settings
+#-------------------------------------------
+integration:
+  lime:
+    connectTimeout: 10
+    readTimeout: 20
+
+#===========================================
+# Circuit breaker settings
+#===========================================
+resilience4j.circuitbreaker:
+  instances:
+    lime:
+      ignoreExceptions: se.sundsvall.dept44.exception.ClientProblem

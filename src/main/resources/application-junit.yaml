@@ -1,0 +1,15 @@
+#===========================================
+# TEST SPECIFIC SETTINGS (junit-tests)
+#===========================================
+spring:
+  cache:
+    type: none
+
+#-------------------------------------------
+# Lime integration settings
+#-------------------------------------------
+# Feign client
+integration:
+  lime:
+    url: http://host.com
+    apiKey: the-test-key
