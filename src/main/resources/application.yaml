@@ -2,12 +2,16 @@
 # General settings
 #===========================================
 spring:
+  cloud:
+    kubernetes:
+      config:
+        namespace: unmasked-test
   application:
     name: api-quotation-request
   cache:
     cache-names: helpdeskcategories,offices
     caffeine.spec: maximumSize=1000,expireAfterWrite=86400s
-
+        
 #----------------------------------------
 # Spring Boot Admin
 #----------------------------------------
