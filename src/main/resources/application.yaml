@@ -2,9 +2,6 @@
 # General settings
 #===========================================
 spring:
-  cloud:
-    config:
-      enabled: false
   application:
     name: api-quotation-request
   cache:
