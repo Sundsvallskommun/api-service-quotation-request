@@ -15,8 +15,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.hateoas.CollectionModel;
 
-import se.sundsvall.generated.clients.limeseab.Helpdeskcategory;
-import se.sundsvall.generated.clients.limeseab.Office;
+import generated.se.sundsvall.seab.lime.Helpdeskcategory;
+import generated.se.sundsvall.seab.lime.Office;
 import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 
 @ExtendWith(MockitoExtension.class)
@@ -158,7 +158,7 @@ class MetaDataServiceTest {
 		verify(limeClientMock).getOfficeList();
 	}
 
-	private <T> CollectionModel<T> toCollectionModel(List<T> list) {
+	private <T> CollectionModel<T> toCollectionModel(final List<T> list) {
 		return CollectionModel.of(list);
 	}
 }
