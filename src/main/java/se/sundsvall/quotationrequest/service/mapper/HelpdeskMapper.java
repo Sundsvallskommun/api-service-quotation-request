@@ -13,7 +13,7 @@ import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 public class HelpdeskMapper {
 
 	static final String DESCRIPTION_FORMAT_TEMPLATE = "%s %s\nTel: %s\nEmail: %s\n\n%s";
-	static final generated.se.sundsvall.seab.lime.Receivedthrough RECEIVEDTHROUGH = new Receivedthrough()
+	static final Receivedthrough RECEIVEDTHROUGH = new Receivedthrough()
 		.id(3_759_301)
 		.key(FORM)
 		.text("Formulär");
