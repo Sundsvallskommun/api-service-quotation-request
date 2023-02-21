@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import se.sundsvall.generated.clients.limeseab.Helpdeskcategory;
-import se.sundsvall.generated.clients.limeseab.Office;
+import generated.se.sundsvall.seab.lime.Helpdeskcategory;
+import generated.se.sundsvall.seab.lime.Office;
 import se.sundsvall.quotationrequest.api.model.MetaData;
 
 class MetaDataMapperTest {
