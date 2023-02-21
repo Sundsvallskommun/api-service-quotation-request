@@ -17,7 +17,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.zalando.problem.ThrowableProblem;
 
-import se.sundsvall.generated.clients.limeseab.Helpdesk;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 import se.sundsvall.quotationrequest.integration.lime.LimeClient;
@@ -52,7 +51,7 @@ class HelpdeskServiceTest {
 
 		verify(metaDataServiceMock).helpdeskIdExists(helpdeskId);
 		verify(metaDataServiceMock).officeIdExists(officeId);
-		verify(limeClientMock).createHelpdesk(any(Helpdesk.class));
+		verify(limeClientMock).createHelpdesk(any());
 	}
 
 	@Test

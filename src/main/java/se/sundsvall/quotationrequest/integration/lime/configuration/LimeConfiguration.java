@@ -15,13 +15,13 @@ import feign.RequestInterceptor;
 import feign.codec.Decoder;
 import feign.codec.ErrorDecoder;
 import feign.jackson.JacksonDecoder;
+import generated.se.sundsvall.seab.lime.Helpdesk;
+import generated.se.sundsvall.seab.lime.Helpdeskcategory;
+import generated.se.sundsvall.seab.lime.Office;
 import se.sundsvall.dept44.configuration.feign.FeignConfiguration;
 import se.sundsvall.dept44.configuration.feign.FeignMultiCustomizer;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder.JsonPathSetup;
-import se.sundsvall.generated.clients.limeseab.Helpdesk;
-import se.sundsvall.generated.clients.limeseab.Helpdeskcategory;
-import se.sundsvall.generated.clients.limeseab.Office;
 import se.sundsvall.quotationrequest.integration.lime.configuration.mixin.IdMixIn;
 
 @Import(FeignConfiguration.class)
@@ -33,7 +33,7 @@ public class LimeConfiguration {
 	private static final String ERROR_DECODER_JSON_PATH = "$.error";
 
 	@Bean
-	FeignBuilderCustomizer feignBuilderCustomizer(LimeProperties limeProperties) {
+	FeignBuilderCustomizer feignBuilderCustomizer(final LimeProperties limeProperties) {
 		return FeignMultiCustomizer.create()
 			.withDecoder(feignHalDecoder())
 			.withErrorDecoder(errorDecoder())
@@ -42,7 +42,7 @@ public class LimeConfiguration {
 			.composeCustomizersToOne();
 	}
 
-	RequestInterceptor requestInterceptor(String apiKey) {
+	RequestInterceptor requestInterceptor(final String apiKey) {
 		return requestTemplate -> requestTemplate.header(API_KEY_HEADER_NAME, apiKey);
 	}
 

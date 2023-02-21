@@ -6,7 +6,7 @@ import static wiremock.com.github.jknack.handlebars.internal.lang3.math.NumberUt
 
 import org.junit.jupiter.api.Test;
 
-import se.sundsvall.generated.clients.limeseab.Helpdesk;
+import generated.se.sundsvall.seab.lime.Helpdesk;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 
