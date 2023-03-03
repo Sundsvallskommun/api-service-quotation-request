@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import se.sundsvall.quotationrequest.integration.lime.configuration.LimeConfiguration;
 
 @FeignClient(name = CLIENT_ID, url = "${integration.lime.url}", configuration = LimeConfiguration.class)
-@CircuitBreaker(name = CLIENT_ID)
 public interface LimeClient {
 
 	/**
