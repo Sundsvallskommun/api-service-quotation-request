@@ -7,11 +7,7 @@ spring:
   cache:
     cache-names: helpdeskcategories,offices
     caffeine.spec: maximumSize=1000,expireAfterWrite=86400s
-        
-#----------------------------------------
-# Spring Boot Admin
-#----------------------------------------
-  boot:
+  boot: # Spring boot admin
     admin:
       client:
         instance:
@@ -43,13 +39,12 @@ springdoc:
 #===========================================
 # Integration settings
 #===========================================
-#-------------------------------------------
-# Lime integration settings
-#-------------------------------------------
 integration:
   lime:
     connectTimeout: 10
     readTimeout: 20
+    url: ${config.integration.lime.url}
+    apiKey: ${config.integration.lime.apiKey}
 
 #===========================================
 # Circuit breaker settings

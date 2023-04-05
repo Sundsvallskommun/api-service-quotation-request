@@ -8,8 +8,9 @@ spring:
 #-------------------------------------------
 # Lime integration settings
 #-------------------------------------------
-# Feign client
-integration:
-  lime:
-    url: http://host.com
-    apiKey: the-test-key
+config:
+  integration:
+    lime:
+      url: http://host.com
+      apiKey: the-test-key
+

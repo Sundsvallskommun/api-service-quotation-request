@@ -1,0 +1,2 @@
+# Move this to dept44
+spring.cloud.kubernetes.enabled: false

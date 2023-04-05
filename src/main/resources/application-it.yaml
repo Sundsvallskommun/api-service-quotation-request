@@ -8,8 +8,8 @@ spring:
 #-------------------------------------------
 # Lime integration settings
 #-------------------------------------------
-# Feign client
-integration:
-  lime:
-    url: http://localhost:${wiremock.server.port:}/lime
-    apiKey: the-api-key
+config:
+  integration:
+    lime:
+      url: http://localhost:${wiremock.server.port:}/lime
+      apiKey: the-api-key
