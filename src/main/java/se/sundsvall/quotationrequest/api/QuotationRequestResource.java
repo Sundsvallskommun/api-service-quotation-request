@@ -7,9 +7,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE;
 import static org.springframework.http.ResponseEntity.created;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -27,6 +24,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 import se.sundsvall.quotationrequest.service.HelpdeskService;
 
@@ -46,7 +45,7 @@ public class QuotationRequestResource {
 	@ApiResponse(responseCode = "404", description = "Not Found", content = @Content(mediaType = APPLICATION_PROBLEM_JSON_VALUE, schema = @Schema(implementation = Problem.class)))
 	@ApiResponse(responseCode = "500", description = "Internal Server error", content = @Content(mediaType = APPLICATION_PROBLEM_JSON_VALUE, schema = @Schema(implementation = Problem.class)))
 	@ApiResponse(responseCode = "502", description = "Bad Gateway", content = @Content(mediaType = APPLICATION_PROBLEM_JSON_VALUE, schema = @Schema(implementation = Problem.class)))
-	ResponseEntity<Void> createQuotationRequest(UriComponentsBuilder uriComponentsBuilder, @RequestBody @NotNull @Valid QuotationRequest body) {
+	ResponseEntity<Void> createQuotationRequest(final UriComponentsBuilder uriComponentsBuilder, @RequestBody @NotNull @Valid final QuotationRequest body) {
 		return created(uriComponentsBuilder.path("/{helpdeskId}").buildAndExpand(helpdeskService.create(body)).toUri())
 			.header(CONTENT_TYPE, ALL_VALUE)
 			.build();
