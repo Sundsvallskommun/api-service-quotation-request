@@ -16,7 +16,6 @@
 	<properties>
 		<!-- Pipeline properties -->
 		<docker.image.name>ms-quotation-request</docker.image.name>
-		<published.container.port.sandbox>8903</published.container.port.sandbox>
 		<published.container.port.test>8902</published.container.port.test>
 		<published.container.port.production>8901</published.container.port.production>
 		<!-- Service properties -->
