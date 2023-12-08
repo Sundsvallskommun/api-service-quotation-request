@@ -1,0 +1,7 @@
+integration:
+  lime:
+    apiKey: the-api-key
+    url: http://localhost:${wiremock.server.port:}/lime
+spring:
+  cache:
+    type: none

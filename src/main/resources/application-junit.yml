@@ -1,0 +1,7 @@
+integration:
+  lime:
+    apiKey: the-test-key
+    url: http://host.com
+spring:
+  cache:
+    type: none
