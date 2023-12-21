@@ -19,9 +19,7 @@
 		<published.container.port.test>8902</published.container.port.test>
 		<published.container.port.production>8901</published.container.port.production>
 		<!-- Service properties -->
-		<openapi-generator-maven-plugin.version>7.1.0</openapi-generator-maven-plugin.version>
 		<generated-sources-path>${project.build.directory}/generated-sources</generated-sources-path>
-		<generated-sources-java-path>src/main/java</generated-sources-java-path>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -50,6 +48,25 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>${build-helper-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>add-generated-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${generated-sources-path}/models</source> <!-- API model classes -->
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<configuration>
@@ -62,7 +79,6 @@
 			<plugin>
 				<groupId>org.openapitools</groupId>
 				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>${openapi-generator-maven-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>seab-lime-api</id>
@@ -79,7 +95,7 @@
 								<useSpringBoot3>true</useSpringBoot3>
 								<useBeanValidation>false</useBeanValidation>
 								<useSwaggerAnnotations>false</useSwaggerAnnotations>
-								<sourceFolder>${generated-sources-java-path}</sourceFolder>
+								<sourceFolder>models</sourceFolder>
 								<dateLibrary>java8</dateLibrary>
 								<modelPackage>generated.se.sundsvall.seab.lime</modelPackage>
 								<openApiNullable>false</openApiNullable>
