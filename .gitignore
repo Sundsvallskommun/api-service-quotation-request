@@ -9,6 +9,7 @@
 .classpath
 .settings/
 bin/
+.factorypath
 
 # IntelliJ
 .idea
