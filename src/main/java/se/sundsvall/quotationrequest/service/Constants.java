@@ -1,6 +1,6 @@
 package se.sundsvall.quotationrequest.service;
 
-public class Constants {
+public final class Constants {
 
 	private Constants() {}
 

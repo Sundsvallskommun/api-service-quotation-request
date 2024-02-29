@@ -5,7 +5,6 @@ import static se.sundsvall.quotationrequest.service.mapper.MetaDataMapper.toMeta
 
 import java.util.Objects;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import se.sundsvall.quotationrequest.api.model.MetaDataResponse;
@@ -14,8 +13,11 @@ import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 @Service
 public class MetaDataService {
 
-	@Autowired
-	private LimeClient limeClient;
+	private final LimeClient limeClient;
+
+	public MetaDataService(LimeClient limeClient) {
+		this.limeClient = limeClient;
+	}
 
 	public MetaDataResponse getMetaData() {
 		return toMetaDataResponse(toList(limeClient.getHelpdeskcategoryList()), toList(limeClient.getOfficeList()));

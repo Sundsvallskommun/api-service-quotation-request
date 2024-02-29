@@ -35,7 +35,8 @@ class QuotationRequestResourceTest {
 	@Test
 	void postQuotationRequest() {
 
-		when(helpdeskServiceMock.create(any())).thenReturn(1);
+		final var id = 123;
+		when(helpdeskServiceMock.create(any())).thenReturn(id);
 
 		// Parameter values.
 		final var contactDetails = ContactDetails.create()
@@ -56,6 +57,7 @@ class QuotationRequestResourceTest {
 			.exchange()
 			.expectStatus().isCreated()
 			.expectHeader().contentType(ALL_VALUE)
+			.expectHeader().location("/quotation-request/" + id)
 			.expectBody().isEmpty();
 
 		verify(helpdeskServiceMock).create(quotationRequest);

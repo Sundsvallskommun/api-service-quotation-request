@@ -1,9 +1,11 @@
 package se.sundsvall.quotationrequest.api;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.groups.Tuple.tuple;
 import static org.mockito.Mockito.verifyNoInteractions;
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON;
+import static org.zalando.problem.Status.BAD_REQUEST;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.zalando.problem.Problem;
+import org.zalando.problem.violations.ConstraintViolationProblem;
+import org.zalando.problem.violations.Violation;
 
 import se.sundsvall.quotationrequest.Application;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
@@ -30,16 +35,21 @@ class QuotationRequestResourceFailuresTest {
 	@Test
 	void createQuotationRequestMissingBody() {
 
-		webTestClient.post().uri("/quotation-request")
+		final var response = webTestClient.post().uri("/quotation-request")
 			.contentType(APPLICATION_JSON)
 			.exchange()
 			.expectStatus().isBadRequest()
 			.expectHeader().contentType(APPLICATION_PROBLEM_JSON)
-			.expectBody()
-			.jsonPath("$.title").isEqualTo(BAD_REQUEST.getReasonPhrase())
-			.jsonPath("$.status").isEqualTo(BAD_REQUEST.value())
-			.jsonPath("$.detail").isEqualTo(
-				"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(org.springframework.web.util.UriComponentsBuilder,se.sundsvall.quotationrequest.api.model.QuotationRequest)");
+			.expectBody(Problem.class)
+			.returnResult()
+			.getResponseBody();
+
+		// Assert
+		assertThat(response).isNotNull();
+		assertThat(response.getTitle()).isEqualTo(BAD_REQUEST.getReasonPhrase());
+		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
+		assertThat(response.getDetail()).isEqualTo(
+			"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(org.springframework.web.util.UriComponentsBuilder,se.sundsvall.quotationrequest.api.model.QuotationRequest)");
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
@@ -47,25 +57,27 @@ class QuotationRequestResourceFailuresTest {
 	@Test
 	void createQuotationRequestEmptyBody() {
 
-		webTestClient.post().uri("/quotation-request")
+		final var response = webTestClient.post().uri("/quotation-request")
 			.contentType(APPLICATION_JSON)
 			.bodyValue(QuotationRequest.create()) // Empty body
 			.exchange()
 			.expectStatus().isBadRequest()
 			.expectHeader().contentType(APPLICATION_PROBLEM_JSON)
-			.expectBody()
-			.jsonPath("$.title").isEqualTo("Constraint Violation")
-			.jsonPath("$.status").isEqualTo(BAD_REQUEST.value())
-			.jsonPath("$.violations[0].field").isEqualTo("contactDetails")
-			.jsonPath("$.violations[0].message").isEqualTo("must not be null")
-			.jsonPath("$.violations[1].field").isEqualTo("helpdeskId")
-			.jsonPath("$.violations[1].message").isEqualTo("must not be blank")
-			.jsonPath("$.violations[2].field").isEqualTo("note")
-			.jsonPath("$.violations[2].message").isEqualTo("must not be blank")
-			.jsonPath("$.violations[3].field").isEqualTo("officeId")
-			.jsonPath("$.violations[3].message").isEqualTo("must not be blank")
-			.jsonPath("$.violations[4].field").isEqualTo("title")
-			.jsonPath("$.violations[4].message").isEqualTo("must not be blank");
+			.expectBody(ConstraintViolationProblem.class)
+			.returnResult()
+			.getResponseBody();
+
+		// Assert
+		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
+		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
+		assertThat(response.getViolations())
+			.extracting(Violation::getField, Violation::getMessage)
+			.containsExactly(
+				tuple("contactDetails", "must not be null"),
+				tuple("helpdeskId", "must not be blank"),
+				tuple("note", "must not be blank"),
+				tuple("officeId", "must not be blank"),
+				tuple("title", "must not be blank"));
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
@@ -81,23 +93,26 @@ class QuotationRequestResourceFailuresTest {
 			.withHelpdeskId("helpdeskId")
 			.withOfficeId("officeId");
 
-		webTestClient.post().uri("/quotation-request")
+		final var response = webTestClient.post().uri("/quotation-request")
 			.contentType(APPLICATION_JSON)
 			.bodyValue(quotationRequest)
 			.exchange()
 			.expectStatus().isBadRequest()
 			.expectHeader().contentType(APPLICATION_PROBLEM_JSON)
-			.expectBody()
-			.jsonPath("$.title").isEqualTo("Constraint Violation")
-			.jsonPath("$.status").isEqualTo(BAD_REQUEST.value())
-			.jsonPath("$.violations[0].field").isEqualTo("contactDetails.emailAddress")
-			.jsonPath("$.violations[0].message").isEqualTo("must not be blank")
-			.jsonPath("$.violations[1].field").isEqualTo("contactDetails.firstName")
-			.jsonPath("$.violations[1].message").isEqualTo("must not be blank")
-			.jsonPath("$.violations[2].field").isEqualTo("contactDetails.phoneNumber")
-			.jsonPath("$.violations[2].message").isEqualTo("must not be blank")
-			.jsonPath("$.violations[3].field").isEqualTo("contactDetails.surname")
-			.jsonPath("$.violations[3].message").isEqualTo("must not be blank");
+			.expectBody(ConstraintViolationProblem.class)
+			.returnResult()
+			.getResponseBody();
+
+		// Assert
+		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
+		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
+		assertThat(response.getViolations())
+			.extracting(Violation::getField, Violation::getMessage)
+			.containsExactly(
+				tuple("contactDetails.emailAddress", "must not be blank"),
+				tuple("contactDetails.firstName", "must not be blank"),
+				tuple("contactDetails.phoneNumber", "must not be blank"),
+				tuple("contactDetails.surname", "must not be blank"));
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
@@ -117,17 +132,23 @@ class QuotationRequestResourceFailuresTest {
 			.withHelpdeskId("helpdeskId")
 			.withOfficeId("officeId");
 
-		webTestClient.post().uri("/quotation-request")
+		final var response = webTestClient.post().uri("/quotation-request")
 			.contentType(APPLICATION_JSON)
 			.bodyValue(quotationRequest)
 			.exchange()
 			.expectStatus().isBadRequest()
 			.expectHeader().contentType(APPLICATION_PROBLEM_JSON)
-			.expectBody()
-			.jsonPath("$.title").isEqualTo("Constraint Violation")
-			.jsonPath("$.status").isEqualTo(BAD_REQUEST.value())
-			.jsonPath("$.violations[0].field").isEqualTo("contactDetails.emailAddress")
-			.jsonPath("$.violations[0].message").isEqualTo("must be a well-formed email address");
+			.expectBody(ConstraintViolationProblem.class)
+			.returnResult()
+			.getResponseBody();
+
+		// Assert
+		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
+		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
+		assertThat(response.getViolations())
+			.extracting(Violation::getField, Violation::getMessage)
+			.containsExactly(
+				tuple("contactDetails.emailAddress", "must be a well-formed email address"));
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}

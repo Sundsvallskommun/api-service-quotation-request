@@ -7,7 +7,6 @@ import static se.sundsvall.quotationrequest.service.Constants.ERROR_OFFICE_NOT_F
 import static se.sundsvall.quotationrequest.service.mapper.HelpdeskMapper.toHelpdesk;
 import static se.sundsvall.quotationrequest.service.mapper.HelpdeskMapper.toHelpdeskId;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zalando.problem.Problem;
 
@@ -17,11 +16,14 @@ import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 @Service
 public class HelpdeskService {
 
-	@Autowired
-	private LimeClient limeClient;
+	private final LimeClient limeClient;
 
-	@Autowired
-	private MetaDataService metaDataService;
+	private final MetaDataService metaDataService;
+
+	public HelpdeskService(LimeClient limeClient, MetaDataService metaDataService) {
+		this.limeClient = limeClient;
+		this.metaDataService = metaDataService;
+	}
 
 	public Integer create(QuotationRequest quotationRequest) {
 		validate(quotationRequest);
