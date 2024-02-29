@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
@@ -29,13 +28,11 @@ class QuotationRequestResourceTest {
 	@MockBean
 	private HelpdeskService helpdeskServiceMock;
 
-	@LocalServerPort
-	private int port;
-
 	@Test
 	void postQuotationRequest() {
 
-		when(helpdeskServiceMock.create(any())).thenReturn(1);
+		final var id = 123;
+		when(helpdeskServiceMock.create(any())).thenReturn(id);
 
 		// Parameter values.
 		final var contactDetails = ContactDetails.create()
@@ -56,6 +53,7 @@ class QuotationRequestResourceTest {
 			.exchange()
 			.expectStatus().isCreated()
 			.expectHeader().contentType(ALL_VALUE)
+			.expectHeader().location("/quotation-request/" + id)
 			.expectBody().isEmpty();
 
 		verify(helpdeskServiceMock).create(quotationRequest);

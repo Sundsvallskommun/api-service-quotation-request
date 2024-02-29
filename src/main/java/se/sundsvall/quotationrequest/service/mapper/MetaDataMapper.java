@@ -13,7 +13,7 @@ import generated.se.sundsvall.seab.lime.Office;
 import se.sundsvall.quotationrequest.api.model.MetaData;
 import se.sundsvall.quotationrequest.api.model.MetaDataResponse;
 
-public class MetaDataMapper {
+public final class MetaDataMapper {
 
 	private MetaDataMapper() {}
 

@@ -10,7 +10,7 @@ import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Receivedthrough;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 
-public class HelpdeskMapper {
+public final class HelpdeskMapper {
 
 	static final String DESCRIPTION_FORMAT_TEMPLATE = "%s %s\nTel: %s\nEmail: %s\n\n%s";
 	static final Receivedthrough RECEIVEDTHROUGH = new Receivedthrough()
