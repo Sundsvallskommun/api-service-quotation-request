@@ -7,6 +7,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON;
 import static org.zalando.problem.Status.BAD_REQUEST;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +28,9 @@ import se.sundsvall.quotationrequest.service.HelpdeskService;
 @ActiveProfiles("junit")
 class QuotationRequestResourceFailuresTest {
 
+	private static final String PATH = "/{municipalityId}/quotation-request";
+	private static final String MUNICIPALITY_ID = "2281";
+
 	@Autowired
 	private WebTestClient webTestClient;
 
@@ -35,7 +40,9 @@ class QuotationRequestResourceFailuresTest {
 	@Test
 	void createQuotationRequestMissingBody() {
 
-		final var response = webTestClient.post().uri("/quotation-request")
+		// Act
+		final var response = webTestClient.post()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", MUNICIPALITY_ID)))
 			.contentType(APPLICATION_JSON)
 			.exchange()
 			.expectStatus().isBadRequest()
@@ -49,7 +56,7 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response.getTitle()).isEqualTo(BAD_REQUEST.getReasonPhrase());
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
 		assertThat(response.getDetail()).isEqualTo(
-			"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(org.springframework.web.util.UriComponentsBuilder,se.sundsvall.quotationrequest.api.model.QuotationRequest)");
+			"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(java.lang.String,se.sundsvall.quotationrequest.api.model.QuotationRequest,org.springframework.web.util.UriComponentsBuilder)");
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
@@ -57,7 +64,9 @@ class QuotationRequestResourceFailuresTest {
 	@Test
 	void createQuotationRequestEmptyBody() {
 
-		final var response = webTestClient.post().uri("/quotation-request")
+		// Act
+		final var response = webTestClient.post()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", MUNICIPALITY_ID)))
 			.contentType(APPLICATION_JSON)
 			.bodyValue(QuotationRequest.create()) // Empty body
 			.exchange()
@@ -85,7 +94,7 @@ class QuotationRequestResourceFailuresTest {
 	@Test
 	void createQuotationRequestEmptyContactDetails() {
 
-		// Parameter values.
+		// Arrange
 		final var quotationRequest = QuotationRequest.create()
 			.withTitle("title")
 			.withContactDetails(ContactDetails.create()) // Empty contact details
@@ -93,7 +102,9 @@ class QuotationRequestResourceFailuresTest {
 			.withHelpdeskId("helpdeskId")
 			.withOfficeId("officeId");
 
-		final var response = webTestClient.post().uri("/quotation-request")
+		// Act
+		final var response = webTestClient.post()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", MUNICIPALITY_ID)))
 			.contentType(APPLICATION_JSON)
 			.bodyValue(quotationRequest)
 			.exchange()
@@ -120,7 +131,7 @@ class QuotationRequestResourceFailuresTest {
 	@Test
 	void createQuotationRequestBadEmailAddress() {
 
-		// Parameter values.
+		// Arrange
 		final var quotationRequest = QuotationRequest.create()
 			.withTitle("title")
 			.withContactDetails(ContactDetails.create()
@@ -132,7 +143,9 @@ class QuotationRequestResourceFailuresTest {
 			.withHelpdeskId("helpdeskId")
 			.withOfficeId("officeId");
 
-		final var response = webTestClient.post().uri("/quotation-request")
+		// Act
+		final var response = webTestClient.post()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", MUNICIPALITY_ID)))
 			.contentType(APPLICATION_JSON)
 			.bodyValue(quotationRequest)
 			.exchange()
@@ -149,6 +162,44 @@ class QuotationRequestResourceFailuresTest {
 			.extracting(Violation::getField, Violation::getMessage)
 			.containsExactly(
 				tuple("contactDetails.emailAddress", "must be a well-formed email address"));
+
+		verifyNoInteractions(helpdeskServiceMock);
+	}
+
+	@Test
+	void getMetaDataInvalidMunicipalityId() {
+
+		// Arrange
+		final var municipalityId = "invalid";
+		final var quotationRequest = QuotationRequest.create()
+			.withTitle("title")
+			.withContactDetails(ContactDetails.create()
+				.withEmailAddress("test@test.com")
+				.withFirstName("firstName")
+				.withPhoneNumber("phoneNumber")
+				.withSurname("surname"))
+			.withNote("note")
+			.withHelpdeskId("helpdeskId")
+			.withOfficeId("officeId");
+
+		// Act
+		final var response = webTestClient.post()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", municipalityId)))
+			.contentType(APPLICATION_JSON)
+			.bodyValue(quotationRequest)
+			.exchange()
+			.expectStatus().isBadRequest()
+			.expectHeader().contentType(APPLICATION_PROBLEM_JSON)
+			.expectBody(ConstraintViolationProblem.class)
+			.returnResult()
+			.getResponseBody();
+
+		// Assert
+		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
+		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
+		assertThat(response.getViolations())
+			.extracting(Violation::getField, Violation::getMessage)
+			.containsExactly(tuple("createQuotationRequest.municipalityId", "not a valid municipality ID"));
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}

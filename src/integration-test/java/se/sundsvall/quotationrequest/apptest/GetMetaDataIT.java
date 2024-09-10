@@ -21,13 +21,14 @@ import se.sundsvall.quotationrequest.Application;
 @WireMockAppTestSuite(files = "classpath:/GetMetaDataIT/", classes = Application.class)
 class GetMetaDataIT extends AbstractAppTest {
 
+	private static final String PATH = "/2281/meta-data";
 	private static final Entry<String, List<String>> EXPECTED_SUCCESS_CONTENT_TYPE_HEADER = entry(CONTENT_TYPE, List.of(APPLICATION_JSON_VALUE));
 	private static final String RESPONSE_FILE = "response.json";
 
 	@Test
-	void test01_getMetaData() throws Exception {
+	void test01_getMetaData() {
 		setupCall()
-			.withServicePath("/meta-data")
+			.withServicePath(PATH)
 			.withHttpMethod(GET)
 			.withExpectedResponseStatus(OK)
 			.withExpectedResponseHeader(EXPECTED_SUCCESS_CONTENT_TYPE_HEADER.getKey(), EXPECTED_SUCCESS_CONTENT_TYPE_HEADER.getValue())
@@ -36,9 +37,9 @@ class GetMetaDataIT extends AbstractAppTest {
 	}
 
 	@Test
-	void test02_getMetaDataEmptyResponseFromLime() throws Exception {
+	void test02_getMetaDataEmptyResponseFromLime() {
 		setupCall()
-			.withServicePath("/meta-data")
+			.withServicePath(PATH)
 			.withHttpMethod(GET)
 			.withExpectedResponseStatus(OK)
 			.withExpectedResponseHeader(EXPECTED_SUCCESS_CONTENT_TYPE_HEADER.getKey(), EXPECTED_SUCCESS_CONTENT_TYPE_HEADER.getValue())
@@ -47,9 +48,9 @@ class GetMetaDataIT extends AbstractAppTest {
 	}
 
 	@Test
-	void test03_getMetaDataAllInactiveInResponseFromLime() throws Exception {
+	void test03_getMetaDataAllInactiveInResponseFromLime() {
 		setupCall()
-			.withServicePath("/meta-data")
+			.withServicePath(PATH)
 			.withHttpMethod(GET)
 			.withExpectedResponseStatus(OK)
 			.withExpectedResponseHeader(EXPECTED_SUCCESS_CONTENT_TYPE_HEADER.getKey(), EXPECTED_SUCCESS_CONTENT_TYPE_HEADER.getValue())

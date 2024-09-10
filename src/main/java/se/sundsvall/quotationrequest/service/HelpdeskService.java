@@ -17,7 +17,6 @@ import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 public class HelpdeskService {
 
 	private final LimeClient limeClient;
-
 	private final MetaDataService metaDataService;
 
 	public HelpdeskService(LimeClient limeClient, MetaDataService metaDataService) {
