@@ -5,6 +5,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +22,9 @@ import se.sundsvall.quotationrequest.service.MetaDataService;
 @ActiveProfiles("junit")
 class MetaDataResourceTest {
 
+	private static final String PATH = "/{municipalityId}/meta-data";
+	private static final String MUNICIPALITY_ID = "2281";
+
 	@Autowired
 	private WebTestClient webTestClient;
 
@@ -29,9 +34,12 @@ class MetaDataResourceTest {
 	@Test
 	void getMetaData() {
 
+		// Arrange
 		when(metaDataServiceMock.getMetaData()).thenReturn(MetaDataResponse.create());
 
-		final var result = webTestClient.get().uri("/meta-data")
+		// Act
+		final var result = webTestClient.get()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", MUNICIPALITY_ID)))
 			.exchange()
 			.expectStatus().isOk()
 			.expectHeader().contentType(APPLICATION_JSON)
@@ -39,6 +47,7 @@ class MetaDataResourceTest {
 			.returnResult()
 			.getResponseBody();
 
+		// Assert
 		assertThat(result).isNotNull();
 
 		verify(metaDataServiceMock).getMetaData();

@@ -6,6 +6,8 @@ import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.ALL_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +24,9 @@ import se.sundsvall.quotationrequest.service.HelpdeskService;
 @ActiveProfiles("junit")
 class QuotationRequestResourceTest {
 
+	private static final String PATH = "/{municipalityId}/quotation-request";
+	private static final String MUNICIPALITY_ID = "2281";
+
 	@Autowired
 	private WebTestClient webTestClient;
 
@@ -31,10 +36,8 @@ class QuotationRequestResourceTest {
 	@Test
 	void postQuotationRequest() {
 
+		// Arrange
 		final var id = 123;
-		when(helpdeskServiceMock.create(any())).thenReturn(id);
-
-		// Parameter values.
 		final var contactDetails = ContactDetails.create()
 			.withFirstName("firstName")
 			.withSurname("surname")
@@ -47,15 +50,20 @@ class QuotationRequestResourceTest {
 			.withHelpdeskId("helpdeskId")
 			.withOfficeId("officeId");
 
-		webTestClient.post().uri("/quotation-request")
+		when(helpdeskServiceMock.create(any())).thenReturn(id);
+
+		// Act
+		webTestClient.post()
+			.uri(builder -> builder.path(PATH).build(Map.of("municipalityId", MUNICIPALITY_ID)))
 			.contentType(APPLICATION_JSON)
 			.bodyValue(quotationRequest)
 			.exchange()
 			.expectStatus().isCreated()
 			.expectHeader().contentType(ALL_VALUE)
-			.expectHeader().location("/quotation-request/" + id)
+			.expectHeader().location("/" + MUNICIPALITY_ID + "/quotation-request/" + id)
 			.expectBody().isEmpty();
 
+		// Assert
 		verify(helpdeskServiceMock).create(quotationRequest);
 	}
 }
