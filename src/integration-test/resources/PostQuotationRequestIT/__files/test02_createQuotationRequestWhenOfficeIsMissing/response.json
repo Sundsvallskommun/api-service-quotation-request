@@ -1,5 +1,5 @@
 {
+	"detail": "Provided officeId doesn't match any existing office!",
 	"title": "Not Found",
-	"status": 404,
-	"detail": "Provided officeId doesn't match any existing office!"
+	"status": 404
 }

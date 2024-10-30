@@ -40,8 +40,8 @@ public interface LimeClient {
 	/**
 	 * Create a new Helpdesk object.
 	 *
-	 * @param helpdesk The object to create.
-	 * @return the created Helpdesk object
+	 * @param  helpdesk The object to create.
+	 * @return          the created Helpdesk object
 	 */
 	@PostMapping(path = "/helpdesk/", consumes = APPLICATION_JSON_VALUE, produces = HAL_JSON_VALUE)
 	Helpdesk createHelpdesk(@RequestBody Helpdesk helpdesk);

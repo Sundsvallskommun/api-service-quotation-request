@@ -1,19 +1,13 @@
 {
-	"name": "lime-helpdeskcategorylist",
 	"request": {
+		"headers": {"x-api-key": {"equalTo": "the-api-key"}},
 		"method": "GET",
-		"urlPath": "/lime/helpdeskcategory/",
-		"headers": {
-			"x-api-key": {
-				"equalTo": "the-api-key"
-			}
-		}
+		"urlPath": "/lime/helpdeskcategory/"
 	},
 	"response": {
-		"headers": {
-			"Content-Type": "application/hal+json"
-		},
-		"status": 200,
-		"bodyFileName": "test03_getMetaDataAllInactiveInResponseFromLime/responses/lime-helpdeskcategorylist-response.json"
-	}
+		"headers": {"Content-Type": "application/hal+json"},
+		"bodyFileName": "test03_getMetaDataAllInactiveInResponseFromLime/responses/lime-helpdeskcategorylist-response.json",
+		"status": 200
+	},
+	"name": "lime-helpdeskcategorylist"
 }

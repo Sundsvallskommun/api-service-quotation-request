@@ -1,5 +1,5 @@
 {
+	"detail": "Provided helpdeskId doesn't match any existing helpdeskCategory!",
 	"title": "Not Found",
-	"status": 404,
-	"detail": "Provided helpdeskId doesn't match any existing helpdeskCategory!"
+	"status": 404
 }
