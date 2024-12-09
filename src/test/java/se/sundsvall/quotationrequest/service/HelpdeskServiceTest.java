@@ -16,7 +16,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.zalando.problem.ThrowableProblem;
-
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 import se.sundsvall.quotationrequest.integration.lime.LimeClient;

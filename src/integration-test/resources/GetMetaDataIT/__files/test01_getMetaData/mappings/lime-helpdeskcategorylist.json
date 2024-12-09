@@ -1,11 +1,17 @@
 {
 	"request": {
-		"headers": {"x-api-key": {"equalTo": "the-api-key"}},
+		"headers": {
+			"x-api-key": {
+				"equalTo": "the-api-key"
+			}
+		},
 		"method": "GET",
 		"urlPath": "/lime/helpdeskcategory/"
 	},
 	"response": {
-		"headers": {"Content-Type": "application/hal+json"},
+		"headers": {
+			"Content-Type": "application/hal+json"
+		},
 		"bodyFileName": "test01_getMetaData/responses/lime-helpdeskcategorylist-response.json",
 		"status": 200
 	},

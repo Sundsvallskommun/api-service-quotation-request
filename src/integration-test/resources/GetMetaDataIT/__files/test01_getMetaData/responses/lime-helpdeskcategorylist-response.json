@@ -1,278 +1,344 @@
 {
 	"_links": {
-		"next": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/?_offset=10"},
-		"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/"}
-	},
-	"_embedded": {"limeobjects": [
-		{
-			"_createdtime": "2010-03-26T13:13:30.027000+01:00",
-			"_updateduser": 105701,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/businessarea/new/"}
-			},
-			"name": "Avbrottsavisering",
-			"active": false,
-			"_id": 1001,
-			"_descriptive": "Avbrottsavisering",
-			"_createduser": 1,
-			"_timestamp": "2022-10-24T11:09:26.827000+02:00"
+		"next": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/?_offset=10"
 		},
-		{
-			"_createdtime": "2010-03-26T13:13:30.050000+01:00",
-			"_updateduser": 57001,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/businessarea/new/"}
-			},
-			"name": "Fakturafråga",
-			"active": false,
-			"_id": 1201,
-			"_descriptive": "Fakturafråga",
-			"_createduser": 1,
-			"_timestamp": "2021-03-26T13:24:03.577000+01:00"
-		},
-		{
-			"_createdtime": "2010-03-26T13:13:30.070000+01:00",
-			"_updateduser": 57001,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/businessarea/new/"}
-			},
-			"name": "Felanmälan",
-			"active": false,
-			"_id": 1401,
-			"_descriptive": "Felanmälan",
-			"_createduser": 1,
-			"_timestamp": "2021-03-26T13:24:03.577000+01:00"
-		},
-		{
-			"_createdtime": "2010-03-26T13:13:30.077000+01:00",
-			"_updateduser": 94301,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/businessarea/new/"}
-			},
-			"name": "Flytt",
-			"active": false,
-			"_id": 1501,
-			"_descriptive": "Flytt",
-			"_createduser": 1,
-			"_timestamp": "2021-04-19T08:36:11.700000+02:00"
-		},
-		{
-			"_createdtime": "2010-05-31T13:49:08.640000+02:00",
-			"_updateduser": 91101,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/businessarea/new/"}
-			},
-			"name": "Frånkoppling",
-			"active": false,
-			"_id": 1801,
-			"_descriptive": "Frånkoppling",
-			"_createduser": 1,
-			"_timestamp": "2021-03-31T15:29:24.630000+02:00"
-		},
-		{
-			"_createdtime": "2010-05-31T13:49:18.683000+02:00",
-			"_updateduser": 105701,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/businessarea/new/"}
-			},
-			"name": "Anslutning fjv",
-			"active": true,
-			"_id": 1901,
-			"_descriptive": "Anslutning fjv",
-			"_createduser": 1,
-			"_timestamp": "2022-10-24T11:19:04.870000+02:00"
-		},
-		{
-			"_createdtime": "2010-05-31T13:49:28.547000+02:00",
-			"_updateduser": 1,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/businessarea/new/"}
-			},
-			"name": "Kundarbete",
-			"active": false,
-			"_id": 2001,
-			"_descriptive": "Kundarbete",
-			"_createduser": 1,
-			"_timestamp": "2021-11-04T12:35:36.970000+01:00"
-		},
-		{
-			"_createdtime": "2010-05-31T13:50:26.260000+02:00",
-			"_updateduser": 57001,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/businessarea/new/"}
-			},
-			"name": "Muntligt avtal",
-			"active": false,
-			"_id": 2101,
-			"_descriptive": "Muntligt avtal",
-			"_createduser": 1,
-			"_timestamp": "2021-03-26T13:24:03.577000+01:00"
-		},
-		{
-			"_createdtime": "2010-05-31T13:50:35.443000+02:00",
-			"_updateduser": 105701,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/businessarea/new/"}
-			},
-			"name": "Reklamation",
-			"active": false,
-			"_id": 2201,
-			"_descriptive": "Reklamation",
-			"_createduser": 1,
-			"_timestamp": "2022-10-24T14:25:36.773000+02:00"
-		},
-		{
-			"_createdtime": "2010-05-31T13:50:42.573000+02:00",
-			"_updateduser": 93801,
-			"_links": {
-				"relation_helpdesk": {
-					"name": "helpdesk",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/helpdesk/"
-				},
-				"new_helpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/helpdesk/new/"},
-				"relation_businessarea": {
-					"name": "businessarea",
-					"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/businessarea/"
-				},
-				"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/"},
-				"limetype": {
-					"name": "helpdeskcategory",
-					"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
-				},
-				"new_businessarea": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/businessarea/new/"}
-			},
-			"name": "Serviceavtal",
-			"active": true,
-			"_id": 2301,
-			"_descriptive": "Serviceavtal",
-			"_createduser": 1,
-			"_timestamp": "2021-11-19T07:47:01.027000+01:00"
+		"self": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/"
 		}
-	]}
+	},
+	"_embedded": {
+		"limeobjects": [
+			{
+				"_createdtime": "2010-03-26T13:13:30.027000+01:00",
+				"_updateduser": 105701,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1001/businessarea/new/"
+					}
+				},
+				"name": "Avbrottsavisering",
+				"active": false,
+				"_id": 1001,
+				"_descriptive": "Avbrottsavisering",
+				"_createduser": 1,
+				"_timestamp": "2022-10-24T11:09:26.827000+02:00"
+			},
+			{
+				"_createdtime": "2010-03-26T13:13:30.050000+01:00",
+				"_updateduser": 57001,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1201/businessarea/new/"
+					}
+				},
+				"name": "Fakturafråga",
+				"active": false,
+				"_id": 1201,
+				"_descriptive": "Fakturafråga",
+				"_createduser": 1,
+				"_timestamp": "2021-03-26T13:24:03.577000+01:00"
+			},
+			{
+				"_createdtime": "2010-03-26T13:13:30.070000+01:00",
+				"_updateduser": 57001,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1401/businessarea/new/"
+					}
+				},
+				"name": "Felanmälan",
+				"active": false,
+				"_id": 1401,
+				"_descriptive": "Felanmälan",
+				"_createduser": 1,
+				"_timestamp": "2021-03-26T13:24:03.577000+01:00"
+			},
+			{
+				"_createdtime": "2010-03-26T13:13:30.077000+01:00",
+				"_updateduser": 94301,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1501/businessarea/new/"
+					}
+				},
+				"name": "Flytt",
+				"active": false,
+				"_id": 1501,
+				"_descriptive": "Flytt",
+				"_createduser": 1,
+				"_timestamp": "2021-04-19T08:36:11.700000+02:00"
+			},
+			{
+				"_createdtime": "2010-05-31T13:49:08.640000+02:00",
+				"_updateduser": 91101,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1801/businessarea/new/"
+					}
+				},
+				"name": "Frånkoppling",
+				"active": false,
+				"_id": 1801,
+				"_descriptive": "Frånkoppling",
+				"_createduser": 1,
+				"_timestamp": "2021-03-31T15:29:24.630000+02:00"
+			},
+			{
+				"_createdtime": "2010-05-31T13:49:18.683000+02:00",
+				"_updateduser": 105701,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/1901/businessarea/new/"
+					}
+				},
+				"name": "Anslutning fjv",
+				"active": true,
+				"_id": 1901,
+				"_descriptive": "Anslutning fjv",
+				"_createduser": 1,
+				"_timestamp": "2022-10-24T11:19:04.870000+02:00"
+			},
+			{
+				"_createdtime": "2010-05-31T13:49:28.547000+02:00",
+				"_updateduser": 1,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2001/businessarea/new/"
+					}
+				},
+				"name": "Kundarbete",
+				"active": false,
+				"_id": 2001,
+				"_descriptive": "Kundarbete",
+				"_createduser": 1,
+				"_timestamp": "2021-11-04T12:35:36.970000+01:00"
+			},
+			{
+				"_createdtime": "2010-05-31T13:50:26.260000+02:00",
+				"_updateduser": 57001,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2101/businessarea/new/"
+					}
+				},
+				"name": "Muntligt avtal",
+				"active": false,
+				"_id": 2101,
+				"_descriptive": "Muntligt avtal",
+				"_createduser": 1,
+				"_timestamp": "2021-03-26T13:24:03.577000+01:00"
+			},
+			{
+				"_createdtime": "2010-05-31T13:50:35.443000+02:00",
+				"_updateduser": 105701,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2201/businessarea/new/"
+					}
+				},
+				"name": "Reklamation",
+				"active": false,
+				"_id": 2201,
+				"_descriptive": "Reklamation",
+				"_createduser": 1,
+				"_timestamp": "2022-10-24T14:25:36.773000+02:00"
+			},
+			{
+				"_createdtime": "2010-05-31T13:50:42.573000+02:00",
+				"_updateduser": 93801,
+				"_links": {
+					"relation_helpdesk": {
+						"name": "helpdesk",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/helpdesk/"
+					},
+					"new_helpdesk": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/helpdesk/new/"
+					},
+					"relation_businessarea": {
+						"name": "businessarea",
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/businessarea/"
+					},
+					"self": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/"
+					},
+					"limetype": {
+						"name": "helpdeskcategory",
+						"href": "https://host.se/lime_test/api/v1/limetype/helpdeskcategory/"
+					},
+					"new_businessarea": {
+						"href": "https://host.se/lime_test/api/v1/limeobject/helpdeskcategory/2301/businessarea/new/"
+					}
+				},
+				"name": "Serviceavtal",
+				"active": true,
+				"_id": 2301,
+				"_descriptive": "Serviceavtal",
+				"_createduser": 1,
+				"_timestamp": "2021-11-19T07:47:01.027000+01:00"
+			}
+		]
+	}
 }

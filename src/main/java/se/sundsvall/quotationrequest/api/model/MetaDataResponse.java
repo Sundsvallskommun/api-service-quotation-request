@@ -1,9 +1,8 @@
 package se.sundsvall.quotationrequest.api.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.List;
 import java.util.Objects;
-
-import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "Model for Meta Data Response")
 public class MetaDataResponse {

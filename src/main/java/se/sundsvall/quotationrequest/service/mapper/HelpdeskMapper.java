@@ -4,10 +4,9 @@ import static generated.se.sundsvall.seab.lime.Receivedthrough.KeyEnum.FORM;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 import static org.apache.commons.lang3.math.NumberUtils.toInt;
 
-import java.util.Optional;
-
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Receivedthrough;
+import java.util.Optional;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 
 public final class HelpdeskMapper {

@@ -2,15 +2,8 @@ package se.sundsvall.quotationrequest.integration.lime.configuration;
 
 import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 
-import org.springframework.cloud.openfeign.FeignBuilderCustomizer;
-import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Import;
-import org.springframework.hateoas.mediatype.hal.Jackson2HalModule;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
 import feign.RequestInterceptor;
 import feign.codec.Decoder;
 import feign.codec.ErrorDecoder;
@@ -18,6 +11,11 @@ import feign.jackson.JacksonDecoder;
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
+import org.springframework.cloud.openfeign.FeignBuilderCustomizer;
+import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
+import org.springframework.hateoas.mediatype.hal.Jackson2HalModule;
 import se.sundsvall.dept44.configuration.feign.FeignConfiguration;
 import se.sundsvall.dept44.configuration.feign.FeignMultiCustomizer;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder;

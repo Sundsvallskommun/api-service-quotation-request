@@ -5,8 +5,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static se.sundsvall.quotationrequest.integration.lime.configuration.LimeConfiguration.CLIENT_ID;
 
+import feign.RequestInterceptor;
+import feign.RequestTemplate;
+import feign.codec.ErrorDecoder;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -17,10 +19,6 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import feign.RequestInterceptor;
-import feign.RequestTemplate;
-import feign.codec.ErrorDecoder;
 import se.sundsvall.dept44.configuration.feign.FeignMultiCustomizer;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder;
 

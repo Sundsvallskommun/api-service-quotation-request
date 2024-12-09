@@ -4,16 +4,15 @@ import static org.springframework.hateoas.MediaTypes.HAL_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static se.sundsvall.quotationrequest.integration.lime.configuration.LimeConfiguration.CLIENT_ID;
 
+import generated.se.sundsvall.seab.lime.Helpdesk;
+import generated.se.sundsvall.seab.lime.Helpdeskcategory;
+import generated.se.sundsvall.seab.lime.Office;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import generated.se.sundsvall.seab.lime.Helpdesk;
-import generated.se.sundsvall.seab.lime.Helpdeskcategory;
-import generated.se.sundsvall.seab.lime.Office;
 import se.sundsvall.quotationrequest.integration.lime.configuration.LimeConfiguration;
 
 @FeignClient(name = CLIENT_ID, url = "${integration.lime.url}", configuration = LimeConfiguration.class)
