@@ -1,22 +1,32 @@
 {
 	"request": {
-		"headers": {"x-api-key": {"equalTo": "the-api-key"}},
-		"method": "POST",
-		"bodyPatterns": [{"equalToJson": {
-			"description": "Joe Doe\nTel: 079 1234567\nEmail: joe.doe@test.se\n\nBeskrivning av installationen",
-			"helpdeskcategory": 1901,
-			"office": 1001,
-			"title": "Installation av elnät",
-			"receivedthrough": {
-				"id": 3759301,
-				"text": "Formulär",
-				"key": "form"
+		"headers": {
+			"x-api-key": {
+				"equalTo": "the-api-key"
 			}
-		}}],
+		},
+		"method": "POST",
+		"bodyPatterns": [
+			{
+				"equalToJson": {
+					"description": "Joe Doe\nTel: 079 1234567\nEmail: joe.doe@test.se\n\nBeskrivning av installationen",
+					"helpdeskcategory": 1901,
+					"office": 1001,
+					"title": "Installation av elnät",
+					"receivedthrough": {
+						"id": 3759301,
+						"text": "Formulär",
+						"key": "form"
+					}
+				}
+			}
+		],
 		"urlPath": "/lime/helpdesk/"
 	},
 	"response": {
-		"headers": {"Content-Type": "application/hal+json"},
+		"headers": {
+			"Content-Type": "application/hal+json"
+		},
 		"bodyFileName": "test01_createQuotationRequest/responses/lime-helpdeskcreate-response.json",
 		"status": 200
 	},

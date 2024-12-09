@@ -42,12 +42,16 @@
 			"name": "participant",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/participant/"
 		},
-		"new_smsrecipient": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/smsrecipient/new/"},
+		"new_smsrecipient": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/smsrecipient/new/"
+		},
 		"relation_agreement": {
 			"name": "agreement",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/agreement/"
 		},
-		"new_todo": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/todo/new/"},
+		"new_todo": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/todo/new/"
+		},
 		"relation_signagreement": {
 			"name": "signagreement",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/signagreement/"
@@ -56,14 +60,22 @@
 			"name": "coworker",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/coworker/"
 		},
-		"new_checklist_item": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/checklist_item/new/"},
+		"new_checklist_item": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/checklist_item/new/"
+		},
 		"relation_oldchecklistactivity": {
 			"name": "oldchecklistactivity",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/oldchecklistactivity/"
 		},
-		"new_history": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/history/new/"},
-		"new_workorder": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/workorder/new/"},
-		"new_document": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/document/new/"},
+		"new_history": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/history/new/"
+		},
+		"new_workorder": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/workorder/new/"
+		},
+		"new_document": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/document/new/"
+		},
 		"relation_person": {
 			"name": "person",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/person/"
@@ -92,7 +104,9 @@
 			"name": "smsrecipient",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/smsrecipient/"
 		},
-		"new_signagreement": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/signagreement/new/"},
+		"new_signagreement": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/signagreement/new/"
+		},
 		"relation_history": {
 			"name": "history",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/history/"
@@ -101,7 +115,9 @@
 			"name": "mainhelpdesktype",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/mainhelpdesktype/"
 		},
-		"new_serviceprotocol": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/serviceprotocol/new/"},
+		"new_serviceprotocol": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/serviceprotocol/new/"
+		},
 		"relation_helpdeskcategory": {
 			"name": "helpdeskcategory",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/helpdeskcategory/"
@@ -118,13 +134,19 @@
 			"name": "helpdeskgroup",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/helpdeskgroup/"
 		},
-		"new_soschecklistactivity": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/soschecklistactivity/new/"},
-		"new_oldchecklistactivity": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/oldchecklistactivity/new/"},
+		"new_soschecklistactivity": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/soschecklistactivity/new/"
+		},
+		"new_oldchecklistactivity": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/oldchecklistactivity/new/"
+		},
 		"relation_business": {
 			"name": "business",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/business/"
 		},
-		"new_subhelpdesk": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/subhelpdesk/new/"},
+		"new_subhelpdesk": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/subhelpdesk/new/"
+		},
 		"relation_currentchecklistactivity": {
 			"name": "currentchecklistactivity",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/currentchecklistactivity/"
@@ -133,14 +155,22 @@
 			"name": "soschecklistactivity",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/soschecklistactivity/"
 		},
-		"new_timelog": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/timelog/new/"},
+		"new_timelog": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/timelog/new/"
+		},
 		"relation_subhelpdesk": {
 			"name": "subhelpdesk",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/subhelpdesk/"
 		},
-		"new_smssendout": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/smssendout/new/"},
-		"self": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/"},
-		"new_debitrequest": {"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/debitrequest/new/"},
+		"new_smssendout": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/smssendout/new/"
+		},
+		"self": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/"
+		},
+		"new_debitrequest": {
+			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/debitrequest/new/"
+		},
 		"relation_installation": {
 			"name": "installation",
 			"href": "https://host.se/lime_test/api/v1/limeobject/helpdesk/2670101/installation/"

@@ -9,7 +9,6 @@ import static se.sundsvall.quotationrequest.service.mapper.HelpdeskMapper.toHelp
 
 import org.springframework.stereotype.Service;
 import org.zalando.problem.Problem;
-
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 

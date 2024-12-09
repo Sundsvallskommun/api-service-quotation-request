@@ -4,9 +4,7 @@ import static se.sundsvall.quotationrequest.service.mapper.MetaDataMapper.toList
 import static se.sundsvall.quotationrequest.service.mapper.MetaDataMapper.toMetaDataResponse;
 
 import java.util.Objects;
-
 import org.springframework.stereotype.Service;
-
 import se.sundsvall.quotationrequest.api.model.MetaDataResponse;
 import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 

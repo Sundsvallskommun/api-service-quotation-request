@@ -1,11 +1,17 @@
 {
 	"request": {
-		"headers": {"x-api-key": {"equalTo": "the-api-key"}},
+		"headers": {
+			"x-api-key": {
+				"equalTo": "the-api-key"
+			}
+		},
 		"method": "GET",
 		"urlPath": "/lime/office/"
 	},
 	"response": {
-		"headers": {"Content-Type": "application/hal+json"},
+		"headers": {
+			"Content-Type": "application/hal+json"
+		},
 		"bodyFileName": "test02_getMetaDataEmptyResponseFromLime/responses/lime-officelist-response.json",
 		"status": 200
 	},

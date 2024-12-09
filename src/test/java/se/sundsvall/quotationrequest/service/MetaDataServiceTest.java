@@ -6,17 +6,15 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static wiremock.com.github.jknack.handlebars.internal.lang3.math.NumberUtils.toInt;
 
+import generated.se.sundsvall.seab.lime.Helpdeskcategory;
+import generated.se.sundsvall.seab.lime.Office;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.hateoas.CollectionModel;
-
-import generated.se.sundsvall.seab.lime.Helpdeskcategory;
-import generated.se.sundsvall.seab.lime.Office;
 import se.sundsvall.quotationrequest.integration.lime.LimeClient;
 
 @ExtendWith(MockitoExtension.class)
