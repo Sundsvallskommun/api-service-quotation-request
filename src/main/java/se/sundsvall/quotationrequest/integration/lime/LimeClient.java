@@ -7,6 +7,7 @@ import static se.sundsvall.quotationrequest.integration.lime.configuration.LimeC
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.CollectionModel;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import se.sundsvall.quotationrequest.integration.lime.configuration.LimeConfiguration;
 
 @FeignClient(name = CLIENT_ID, url = "${integration.lime.url}", configuration = LimeConfiguration.class)
+@CircuitBreaker(name = CLIENT_ID)
 public interface LimeClient {
 
 	/**
