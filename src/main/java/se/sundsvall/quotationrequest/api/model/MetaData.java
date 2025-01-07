@@ -3,6 +3,7 @@ package se.sundsvall.quotationrequest.api.model;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Objects;
 
+@Schema(description = "Model for MetaData")
 public class MetaData {
 
 	@Schema(description = "Name", example = "Blåberget")

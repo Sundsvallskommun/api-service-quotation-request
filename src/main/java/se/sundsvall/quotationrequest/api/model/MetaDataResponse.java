@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.List;
 import java.util.Objects;
 
-@Schema(description = "Model for Meta Data Response")
+@Schema(description = "Model for MetaData Response")
 public class MetaDataResponse {
 
 	@Schema(description = "List of available offices")

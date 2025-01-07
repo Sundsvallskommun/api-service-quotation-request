@@ -43,12 +43,6 @@ paths:
               style: simple
               schema:
                 type: string
-        "502":
-          description: Bad Gateway
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/Problem"
         "400":
           description: Bad request
           content:
@@ -69,6 +63,12 @@ paths:
             application/problem+json:
               schema:
                 $ref: "#/components/schemas/Problem"
+        "502":
+          description: Bad Gateway
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Problem"
   /{municipalityId}/meta-data:
     get:
       tags:
@@ -84,19 +84,10 @@ paths:
           type: string
         example: 2281
       responses:
-        "502":
-          description: Bad Gateway
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/Problem"
         "200":
           description: Successful operation
           content:
             application/json:
-              schema:
-                $ref: "#/components/schemas/MetaDataResponse"
-            application/problem+json:
               schema:
                 $ref: "#/components/schemas/MetaDataResponse"
         "400":
@@ -109,6 +100,12 @@ paths:
                 - $ref: "#/components/schemas/ConstraintViolationProblem"
         "500":
           description: Internal Server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Problem"
+        "502":
+          description: Bad Gateway
           content:
             application/problem+json:
               schema:
@@ -131,59 +128,6 @@ paths:
       x-wso2-mutual-ssl: Optional
 components:
   schemas:
-    ContactDetails:
-      required:
-      - emailAddress
-      - firstName
-      - phoneNumber
-      - surname
-      type: object
-      properties:
-        firstName:
-          type: string
-          description: First Name
-          example: Joe
-        surname:
-          type: string
-          description: Surname
-          example: Doe
-        phoneNumber:
-          type: string
-          description: Phone Number
-          example: 079 1234567
-        emailAddress:
-          type: string
-          description: Email Address
-          example: joe.doe@test.se
-      description: Model for ContactDetails
-    QuotationRequest:
-      required:
-      - contactDetails
-      - helpdeskId
-      - note
-      - officeId
-      - title
-      type: object
-      properties:
-        title:
-          type: string
-          description: Title of Quotation Request
-          example: Installation av elnät
-        note:
-          type: string
-          description: Description of Quotation Request
-          example: Beskrivning av installationen
-        helpdeskId:
-          type: string
-          description: Category of Quotation Request
-          example: "3601"
-        officeId:
-          type: string
-          description: Where the Quotation Request should end up
-          example: "2701"
-        contactDetails:
-          $ref: "#/components/schemas/ContactDetails"
-      description: QuotationRequest creation request model
     Problem:
       type: object
       properties:
@@ -206,11 +150,11 @@ components:
     StatusType:
       type: object
       properties:
+        reasonPhrase:
+          type: string
         statusCode:
           type: integer
           format: int32
-        reasonPhrase:
-          type: string
     ConstraintViolationProblem:
       type: object
       properties:
@@ -378,6 +322,59 @@ components:
           type: string
         message:
           type: string
+    ContactDetails:
+      required:
+      - emailAddress
+      - firstName
+      - phoneNumber
+      - surname
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: First Name
+          example: Joe
+        surname:
+          type: string
+          description: Surname
+          example: Doe
+        phoneNumber:
+          type: string
+          description: Phone Number
+          example: 079 1234567
+        emailAddress:
+          type: string
+          description: Email Address
+          example: joe.doe@test.se
+      description: Model for ContactDetails
+    QuotationRequest:
+      required:
+      - contactDetails
+      - helpdeskId
+      - note
+      - officeId
+      - title
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of Quotation Request
+          example: Installation av elnät
+        note:
+          type: string
+          description: Description of Quotation Request
+          example: Beskrivning av installationen
+        helpdeskId:
+          type: string
+          description: Category of Quotation Request
+          example: "3601"
+        officeId:
+          type: string
+          description: Where the Quotation Request should end up
+          example: "2701"
+        contactDetails:
+          $ref: "#/components/schemas/ContactDetails"
+      description: QuotationRequest creation request model
     MetaData:
       type: object
       properties:
@@ -389,7 +386,7 @@ components:
           type: string
           description: Id
           example: "123231123"
-      description: List of available helpdeskcategories
+      description: Model for MetaData
     MetaDataResponse:
       type: object
       properties:
@@ -403,5 +400,5 @@ components:
           description: List of available helpdeskcategories
           items:
             $ref: "#/components/schemas/MetaData"
-      description: Model for Meta Data Response
+      description: Model for MetaData Response
   securitySchemes: {}
