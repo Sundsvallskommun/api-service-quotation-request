@@ -54,7 +54,7 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response.getTitle()).isEqualTo(BAD_REQUEST.getReasonPhrase());
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
 		assertThat(response.getDetail()).isEqualTo(
-			"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(java.lang.String,se.sundsvall.quotationrequest.api.model.QuotationRequest,org.springframework.web.util.UriComponentsBuilder)");
+			"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(java.lang.String,se.sundsvall.quotationrequest.api.model.QuotationRequest)");
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
