@@ -150,11 +150,11 @@ components:
     StatusType:
       type: object
       properties:
-        reasonPhrase:
-          type: string
         statusCode:
           type: integer
           format: int32
+        reasonPhrase:
+          type: string
     ConstraintViolationProblem:
       type: object
       properties:
@@ -331,18 +331,22 @@ components:
       type: object
       properties:
         firstName:
+          minLength: 1
           type: string
           description: First Name
           example: Joe
         surname:
+          minLength: 1
           type: string
           description: Surname
           example: Doe
         phoneNumber:
+          minLength: 1
           type: string
           description: Phone Number
           example: 079 1234567
         emailAddress:
+          minLength: 1
           type: string
           description: Email Address
           example: joe.doe@test.se
@@ -357,18 +361,22 @@ components:
       type: object
       properties:
         title:
+          minLength: 1
           type: string
           description: Title of Quotation Request
           example: Installation av elnät
         note:
+          minLength: 1
           type: string
           description: Description of Quotation Request
           example: Beskrivning av installationen
         helpdeskId:
+          minLength: 1
           type: string
           description: Category of Quotation Request
           example: "3601"
         officeId:
+          minLength: 1
           type: string
           description: Where the Quotation Request should end up
           example: "2701"
