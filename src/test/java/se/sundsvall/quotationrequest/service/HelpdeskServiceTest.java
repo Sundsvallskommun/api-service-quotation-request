@@ -18,13 +18,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.zalando.problem.ThrowableProblem;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
-import se.sundsvall.quotationrequest.integration.lime.LimeClient;
+import se.sundsvall.quotationrequest.integration.lime.LimeIntegration;
 
 @ExtendWith(MockitoExtension.class)
 class HelpdeskServiceTest {
 
 	@Mock
-	private LimeClient limeClientMock;
+	private LimeIntegration limeIntegrationMock;
 
 	@Mock
 	private MetaDataService metaDataServiceMock;
@@ -50,7 +50,7 @@ class HelpdeskServiceTest {
 
 		verify(metaDataServiceMock).helpdeskIdExists(helpdeskId);
 		verify(metaDataServiceMock).officeIdExists(officeId);
-		verify(limeClientMock).createHelpdesk(any());
+		verify(limeIntegrationMock).createHelpdesk(any());
 	}
 
 	@Test
@@ -71,7 +71,7 @@ class HelpdeskServiceTest {
 
 		verify(metaDataServiceMock).helpdeskIdExists(helpdeskId);
 		verify(metaDataServiceMock, never()).officeIdExists(any());
-		verify(limeClientMock, never()).createHelpdesk(any());
+		verify(limeIntegrationMock, never()).createHelpdesk(any());
 	}
 
 	@Test
@@ -94,6 +94,6 @@ class HelpdeskServiceTest {
 
 		verify(metaDataServiceMock).helpdeskIdExists(helpdeskId);
 		verify(metaDataServiceMock).officeIdExists(officeId);
-		verify(limeClientMock, never()).createHelpdesk(any());
+		verify(limeIntegrationMock, never()).createHelpdesk(any());
 	}
 }

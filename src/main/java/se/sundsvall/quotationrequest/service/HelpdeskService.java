@@ -10,22 +10,22 @@ import static se.sundsvall.quotationrequest.service.mapper.HelpdeskMapper.toHelp
 import org.springframework.stereotype.Service;
 import org.zalando.problem.Problem;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
-import se.sundsvall.quotationrequest.integration.lime.LimeClient;
+import se.sundsvall.quotationrequest.integration.lime.LimeIntegration;
 
 @Service
 public class HelpdeskService {
 
-	private final LimeClient limeClient;
+	private final LimeIntegration limeIntegration;
 	private final MetaDataService metaDataService;
 
-	public HelpdeskService(LimeClient limeClient, MetaDataService metaDataService) {
-		this.limeClient = limeClient;
+	public HelpdeskService(final LimeIntegration limeIntegration, MetaDataService metaDataService) {
+		this.limeIntegration = limeIntegration;
 		this.metaDataService = metaDataService;
 	}
 
 	public Integer create(QuotationRequest quotationRequest) {
 		validate(quotationRequest);
-		return toHelpdeskId(limeClient.createHelpdesk(toHelpdesk(quotationRequest)));
+		return toHelpdeskId(limeIntegration.createHelpdesk(toHelpdesk(quotationRequest)));
 	}
 
 	private void validate(QuotationRequest quotationRequest) {

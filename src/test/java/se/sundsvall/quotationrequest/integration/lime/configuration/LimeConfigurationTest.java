@@ -51,11 +51,11 @@ class LimeConfigurationTest {
 
 		// Mock static FeignMultiCustomizer to enable spy and to verify that static method is being called
 		try (MockedStatic<FeignMultiCustomizer> feignMultiCustomizerMock = Mockito.mockStatic(FeignMultiCustomizer.class)) {
-			feignMultiCustomizerMock.when(() -> FeignMultiCustomizer.create()).thenReturn(feignMultiCustomizerSpy);
+			feignMultiCustomizerMock.when(FeignMultiCustomizer::create).thenReturn(feignMultiCustomizerSpy);
 
 			configuration.feignBuilderCustomizer(propertiesMock);
 
-			feignMultiCustomizerMock.verify(() -> FeignMultiCustomizer.create());
+			feignMultiCustomizerMock.verify(FeignMultiCustomizer::create);
 		}
 
 		// Verifications
