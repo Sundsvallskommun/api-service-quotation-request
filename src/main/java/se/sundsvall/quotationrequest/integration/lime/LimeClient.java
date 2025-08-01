@@ -8,7 +8,6 @@ import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +24,6 @@ public interface LimeClient {
 	 *
 	 * @return a List of Helpdeskcategory objects
 	 */
-	@Cacheable("helpdeskcategories")
 	@GetMapping(path = "/helpdeskcategory/", produces = HAL_JSON_VALUE)
 	CollectionModel<Helpdeskcategory> getHelpdeskcategoryList();
 
@@ -34,7 +32,6 @@ public interface LimeClient {
 	 *
 	 * @return a List of Office objects
 	 */
-	@Cacheable("offices")
 	@GetMapping(path = "/office/", produces = HAL_JSON_VALUE)
 	CollectionModel<Office> getOfficeList();
 

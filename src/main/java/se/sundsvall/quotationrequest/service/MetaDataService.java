@@ -6,19 +6,19 @@ import static se.sundsvall.quotationrequest.service.mapper.MetaDataMapper.toMeta
 import java.util.Objects;
 import org.springframework.stereotype.Service;
 import se.sundsvall.quotationrequest.api.model.MetaDataResponse;
-import se.sundsvall.quotationrequest.integration.lime.LimeClient;
+import se.sundsvall.quotationrequest.integration.lime.LimeIntegration;
 
 @Service
 public class MetaDataService {
 
-	private final LimeClient limeClient;
+	private final LimeIntegration limeIntegration;
 
-	public MetaDataService(LimeClient limeClient) {
-		this.limeClient = limeClient;
+	public MetaDataService(final LimeIntegration limeIntegration) {
+		this.limeIntegration = limeIntegration;
 	}
 
 	public MetaDataResponse getMetaData() {
-		return toMetaDataResponse(toList(limeClient.getHelpdeskcategoryList()), toList(limeClient.getOfficeList()));
+		return toMetaDataResponse(toList(limeIntegration.getHelpdeskCategories()), toList(limeIntegration.getOffices()));
 	}
 
 	public boolean helpdeskIdExists(String helpdeskId) {

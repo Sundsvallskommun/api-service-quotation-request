@@ -15,13 +15,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.hateoas.CollectionModel;
-import se.sundsvall.quotationrequest.integration.lime.LimeClient;
+import se.sundsvall.quotationrequest.integration.lime.LimeIntegration;
 
 @ExtendWith(MockitoExtension.class)
 class MetaDataServiceTest {
 
 	@Mock
-	private LimeClient limeClientMock;
+	private LimeIntegration limeIntegrationMock;
 
 	@InjectMocks
 	private MetaDataService metaDataService;
@@ -32,10 +32,10 @@ class MetaDataServiceTest {
 		final var helpdeskCategoryId = "666";
 		final var officeId = "777";
 
-		when(limeClientMock.getHelpdeskcategoryList()).thenReturn(
+		when(limeIntegrationMock.getHelpdeskCategories()).thenReturn(
 			toCollectionModel(List.of(new Helpdeskcategory().id(toInt(helpdeskCategoryId)).active(true))));
 
-		when(limeClientMock.getOfficeList()).thenReturn(
+		when(limeIntegrationMock.getOffices()).thenReturn(
 			toCollectionModel(List.of(new Office().id(toInt(officeId)).active(true))));
 
 		final var result = metaDataService.getMetaData();
@@ -44,8 +44,8 @@ class MetaDataServiceTest {
 		assertThat(result.getHelpdeskCategories()).hasSize(1);
 		assertThat(result.getOffices()).hasSize(1);
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -57,8 +57,8 @@ class MetaDataServiceTest {
 		assertThat(result.getHelpdeskCategories()).isEmpty();
 		assertThat(result.getOffices()).isEmpty();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -66,15 +66,15 @@ class MetaDataServiceTest {
 
 		final var helpdeskCategoryId = "666";
 
-		when(limeClientMock.getHelpdeskcategoryList()).thenReturn(
+		when(limeIntegrationMock.getHelpdeskCategories()).thenReturn(
 			toCollectionModel(List.of(new Helpdeskcategory().id(toInt(helpdeskCategoryId)).active(true))));
 
 		final var result = metaDataService.helpdeskIdExists(helpdeskCategoryId);
 
 		assertThat(result).isTrue();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -82,15 +82,15 @@ class MetaDataServiceTest {
 
 		final var helpdeskCategoryId = "666";
 
-		when(limeClientMock.getHelpdeskcategoryList()).thenReturn(
+		when(limeIntegrationMock.getHelpdeskCategories()).thenReturn(
 			toCollectionModel(List.of(new Helpdeskcategory().id(toInt(helpdeskCategoryId)).active(false))));
 
 		final var result = metaDataService.helpdeskIdExists(helpdeskCategoryId);
 
 		assertThat(result).isFalse();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -98,14 +98,14 @@ class MetaDataServiceTest {
 
 		final var helpdeskCategoryId = "666";
 
-		when(limeClientMock.getHelpdeskcategoryList()).thenReturn(toCollectionModel(emptyList()));
+		when(limeIntegrationMock.getHelpdeskCategories()).thenReturn(toCollectionModel(emptyList()));
 
 		final var result = metaDataService.helpdeskIdExists(helpdeskCategoryId);
 
 		assertThat(result).isFalse();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -113,15 +113,15 @@ class MetaDataServiceTest {
 
 		final var officeId = "777";
 
-		when(limeClientMock.getOfficeList()).thenReturn(
+		when(limeIntegrationMock.getOffices()).thenReturn(
 			toCollectionModel(List.of(new Office().id(toInt(officeId)).active(true))));
 
 		final var result = metaDataService.officeIdExists(officeId);
 
 		assertThat(result).isTrue();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -129,15 +129,15 @@ class MetaDataServiceTest {
 
 		final var officeId = "777";
 
-		when(limeClientMock.getOfficeList()).thenReturn(
+		when(limeIntegrationMock.getOffices()).thenReturn(
 			toCollectionModel(List.of(new Office().id(toInt(officeId)).active(false))));
 
 		final var result = metaDataService.officeIdExists(officeId);
 
 		assertThat(result).isFalse();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	@Test
@@ -145,15 +145,15 @@ class MetaDataServiceTest {
 
 		final var officeId = "777";
 
-		when(limeClientMock.getOfficeList()).thenReturn(
+		when(limeIntegrationMock.getOffices()).thenReturn(
 			toCollectionModel(emptyList()));
 
 		final var result = metaDataService.officeIdExists(officeId);
 
 		assertThat(result).isFalse();
 
-		verify(limeClientMock).getHelpdeskcategoryList();
-		verify(limeClientMock).getOfficeList();
+		verify(limeIntegrationMock).getHelpdeskCategories();
+		verify(limeIntegrationMock).getOffices();
 	}
 
 	private <T> CollectionModel<T> toCollectionModel(final List<T> list) {
