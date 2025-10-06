@@ -1,34 +1,34 @@
 openapi: 3.0.1
 info:
   title: api-quotation-request
-  contact: {}
+  contact: { }
   license:
     name: MIT License
     url: https://opensource.org/licenses/MIT
   version: "2.0"
 servers:
-- url: http://localhost:8080
-  description: Generated server url
+  - url: http://localhost:65082
+    description: Generated server url
 tags:
-- name: MetaData
-  description: MetaData operations
-- name: QuotationRequest
-  description: QuotationRequest operations
+  - name: MetaData
+    description: MetaData operations
+  - name: QuotationRequest
+    description: QuotationRequest operations
 paths:
   /{municipalityId}/quotation-request:
     post:
       tags:
-      - QuotationRequest
+        - QuotationRequest
       summary: Create a QuotationRequest
       operationId: createQuotationRequest
       parameters:
-      - name: municipalityId
-        in: path
-        description: Municipality id
-        required: true
-        schema:
-          type: string
-        example: 2281
+        - name: municipalityId
+          in: path
+          description: Municipality id
+          required: true
+          schema:
+            type: string
+          example: 2281
       requestBody:
         content:
           application/json:
@@ -49,8 +49,8 @@ paths:
             application/problem+json:
               schema:
                 oneOf:
-                - $ref: "#/components/schemas/Problem"
-                - $ref: "#/components/schemas/ConstraintViolationProblem"
+                  - $ref: "#/components/schemas/Problem"
+                  - $ref: "#/components/schemas/ConstraintViolationProblem"
         "404":
           description: Not Found
           content:
@@ -72,17 +72,17 @@ paths:
   /{municipalityId}/meta-data:
     get:
       tags:
-      - MetaData
+        - MetaData
       summary: Get MetaData
       operationId: getMetaData
       parameters:
-      - name: municipalityId
-        in: path
-        description: Municipality id
-        required: true
-        schema:
-          type: string
-        example: 2281
+        - name: municipalityId
+          in: path
+          description: Municipality id
+          required: true
+          schema:
+            type: string
+          example: 2281
       responses:
         "200":
           description: Successful operation
@@ -96,8 +96,8 @@ paths:
             application/problem+json:
               schema:
                 oneOf:
-                - $ref: "#/components/schemas/Problem"
-                - $ref: "#/components/schemas/ConstraintViolationProblem"
+                  - $ref: "#/components/schemas/Problem"
+                  - $ref: "#/components/schemas/ConstraintViolationProblem"
         "500":
           description: Internal Server error
           content:
@@ -113,7 +113,7 @@ paths:
   /api-docs:
     get:
       tags:
-      - API
+        - API
       summary: OpenAPI
       operationId: getApiDocs
       responses:
@@ -131,6 +131,12 @@ components:
     Problem:
       type: object
       properties:
+        title:
+          type: string
+        detail:
+          type: string
+        status:
+          $ref: "#/components/schemas/StatusType"
         instance:
           type: string
           format: uri
@@ -141,12 +147,6 @@ components:
           type: object
           additionalProperties:
             type: object
-        status:
-          $ref: "#/components/schemas/StatusType"
-        title:
-          type: string
-        detail:
-          type: string
     StatusType:
       type: object
       properties:
@@ -195,6 +195,8 @@ components:
           type: string
         message:
           type: string
+        detail:
+          type: string
         instance:
           type: string
           format: uri
@@ -202,8 +204,6 @@ components:
           type: object
           additionalProperties:
             type: object
-        detail:
-          type: string
         suppressed:
           type: array
           items:
@@ -266,6 +266,12 @@ components:
                 type: boolean
         message:
           type: string
+        title:
+          type: string
+        detail:
+          type: string
+        status:
+          $ref: "#/components/schemas/StatusType"
         instance:
           type: string
           format: uri
@@ -276,12 +282,6 @@ components:
           type: object
           additionalProperties:
             type: object
-        status:
-          $ref: "#/components/schemas/StatusType"
-        title:
-          type: string
-        detail:
-          type: string
         suppressed:
           type: array
           items:
@@ -324,10 +324,10 @@ components:
           type: string
     ContactDetails:
       required:
-      - emailAddress
-      - firstName
-      - phoneNumber
-      - surname
+        - emailAddress
+        - firstName
+        - phoneNumber
+        - surname
       type: object
       properties:
         firstName:
@@ -349,15 +349,16 @@ components:
           minLength: 1
           type: string
           description: Email Address
+          format: email
           example: joe.doe@test.se
       description: Model for ContactDetails
     QuotationRequest:
       required:
-      - contactDetails
-      - helpdeskId
-      - note
-      - officeId
-      - title
+        - contactDetails
+        - helpdeskId
+        - note
+        - officeId
+        - title
       type: object
       properties:
         title:
@@ -409,4 +410,4 @@ components:
           items:
             $ref: "#/components/schemas/MetaData"
       description: Model for MetaData Response
-  securitySchemes: {}
+  securitySchemes: { }
