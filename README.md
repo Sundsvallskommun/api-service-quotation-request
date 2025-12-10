@@ -6,7 +6,7 @@ _The service provides functionality to integrate with Lime CRM in order to creat
 
 ### Prerequisites
 
-- **Java 21 or higher**
+- **Java 25 or higher**
 - **Maven**
 - **Git**
 - **[Dependent Microservices](#dependencies)**
