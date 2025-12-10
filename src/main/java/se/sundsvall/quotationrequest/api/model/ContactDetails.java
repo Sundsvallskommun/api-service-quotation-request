@@ -10,19 +10,19 @@ import java.util.Objects;
 @Schema(description = "Model for ContactDetails")
 public class ContactDetails {
 
-	@Schema(description = "First Name", example = "Joe", requiredMode = REQUIRED)
+	@Schema(description = "First Name", examples = "Joe", requiredMode = REQUIRED)
 	@NotBlank
 	private String firstName;
 
-	@Schema(description = "Surname", example = "Doe", requiredMode = REQUIRED)
+	@Schema(description = "Surname", examples = "Doe", requiredMode = REQUIRED)
 	@NotBlank
 	private String surname;
 
-	@Schema(description = "Phone Number", example = "079 1234567", requiredMode = REQUIRED)
+	@Schema(description = "Phone Number", examples = "079 1234567", requiredMode = REQUIRED)
 	@NotBlank
 	private String phoneNumber;
 
-	@Schema(description = "Email Address", example = "joe.doe@test.se", requiredMode = REQUIRED)
+	@Schema(description = "Email Address", examples = "joe.doe@test.se", requiredMode = REQUIRED)
 	@Email
 	@NotBlank
 	private String emailAddress;

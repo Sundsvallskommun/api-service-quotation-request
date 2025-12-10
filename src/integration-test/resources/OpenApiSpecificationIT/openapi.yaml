@@ -1,13 +1,13 @@
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: api-quotation-request
-  contact: { }
+  contact: {}
   license:
     name: MIT License
     url: https://opensource.org/licenses/MIT
   version: "2.0"
 servers:
-  - url: http://localhost:65082
+  - url: http://localhost:65086
     description: Generated server url
 tags:
   - name: MetaData
@@ -131,12 +131,12 @@ components:
     Problem:
       type: object
       properties:
+        status:
+          $ref: "#/components/schemas/StatusType"
         title:
           type: string
         detail:
           type: string
-        status:
-          $ref: "#/components/schemas/StatusType"
         instance:
           type: string
           format: uri
@@ -145,8 +145,7 @@ components:
           format: uri
         parameters:
           type: object
-          additionalProperties:
-            type: object
+          additionalProperties: {}
     StatusType:
       type: object
       properties:
@@ -202,8 +201,7 @@ components:
           format: uri
         parameters:
           type: object
-          additionalProperties:
-            type: object
+          additionalProperties: {}
         suppressed:
           type: array
           items:
@@ -240,8 +238,7 @@ components:
     ThrowableProblem:
       type: object
       properties:
-        cause:
-          $ref: "#/components/schemas/ThrowableProblem"
+        cause: {}
         stackTrace:
           type: array
           items:
@@ -266,12 +263,12 @@ components:
                 type: boolean
         message:
           type: string
+        status:
+          $ref: "#/components/schemas/StatusType"
         title:
           type: string
         detail:
           type: string
-        status:
-          $ref: "#/components/schemas/StatusType"
         instance:
           type: string
           format: uri
@@ -280,8 +277,7 @@ components:
           format: uri
         parameters:
           type: object
-          additionalProperties:
-            type: object
+          additionalProperties: {}
         suppressed:
           type: array
           items:
@@ -323,81 +319,92 @@ components:
         message:
           type: string
     ContactDetails:
+      type: object
+      description: Model for ContactDetails
+      properties:
+        firstName:
+          type: string
+          description: First Name
+          examples:
+            - Joe
+          minLength: 1
+        surname:
+          type: string
+          description: Surname
+          examples:
+            - Doe
+          minLength: 1
+        phoneNumber:
+          type: string
+          description: Phone Number
+          examples:
+            - 079 1234567
+          minLength: 1
+        emailAddress:
+          type: string
+          format: email
+          description: Email Address
+          examples:
+            - joe.doe@test.se
+          minLength: 1
       required:
         - emailAddress
         - firstName
         - phoneNumber
         - surname
-      type: object
-      properties:
-        firstName:
-          minLength: 1
-          type: string
-          description: First Name
-          example: Joe
-        surname:
-          minLength: 1
-          type: string
-          description: Surname
-          example: Doe
-        phoneNumber:
-          minLength: 1
-          type: string
-          description: Phone Number
-          example: 079 1234567
-        emailAddress:
-          minLength: 1
-          type: string
-          description: Email Address
-          format: email
-          example: joe.doe@test.se
-      description: Model for ContactDetails
     QuotationRequest:
+      type: object
+      description: QuotationRequest creation request model
+      properties:
+        title:
+          type: string
+          description: Title of Quotation Request
+          examples:
+            - Installation av elnät
+          minLength: 1
+        note:
+          type: string
+          description: Description of Quotation Request
+          examples:
+            - Beskrivning av installationen
+          minLength: 1
+        helpdeskId:
+          type: string
+          description: Category of Quotation Request
+          examples:
+            - "3601"
+          minLength: 1
+        officeId:
+          type: string
+          description: Where the Quotation Request should end up
+          examples:
+            - "2701"
+          minLength: 1
+        contactDetails:
+          $ref: "#/components/schemas/ContactDetails"
       required:
         - contactDetails
         - helpdeskId
         - note
         - officeId
         - title
-      type: object
-      properties:
-        title:
-          minLength: 1
-          type: string
-          description: Title of Quotation Request
-          example: Installation av elnät
-        note:
-          minLength: 1
-          type: string
-          description: Description of Quotation Request
-          example: Beskrivning av installationen
-        helpdeskId:
-          minLength: 1
-          type: string
-          description: Category of Quotation Request
-          example: "3601"
-        officeId:
-          minLength: 1
-          type: string
-          description: Where the Quotation Request should end up
-          example: "2701"
-        contactDetails:
-          $ref: "#/components/schemas/ContactDetails"
-      description: QuotationRequest creation request model
     MetaData:
       type: object
+      description: Model for MetaData
       properties:
         name:
           type: string
           description: Name
-          example: Blåberget
+          examples:
+            - Blåberget
         id:
           type: string
           description: Id
-          example: "123231123"
-      description: Model for MetaData
+          examples:
+            - "123231123"
     MetaDataResponse:
       type: object
+      description: Model for MetaData Response
       properties:
         offices:
           type: array
@@ -409,5 +416,4 @@ components:
           description: List of available helpdeskcategories
           items:
             $ref: "#/components/schemas/MetaData"
-      description: Model for MetaData Response
-  securitySchemes: { }
+  securitySchemes: {}
