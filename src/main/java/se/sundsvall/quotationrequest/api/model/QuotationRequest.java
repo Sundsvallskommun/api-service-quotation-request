@@ -11,19 +11,19 @@ import java.util.Objects;
 @Schema(description = "QuotationRequest creation request model")
 public class QuotationRequest {
 
-	@Schema(description = "Title of Quotation Request", example = "Installation av elnät", requiredMode = REQUIRED)
+	@Schema(description = "Title of Quotation Request", examples = "Installation av elnät", requiredMode = REQUIRED)
 	@NotBlank
 	private String title;
 
-	@Schema(description = "Description of Quotation Request", example = "Beskrivning av installationen", requiredMode = REQUIRED)
+	@Schema(description = "Description of Quotation Request", examples = "Beskrivning av installationen", requiredMode = REQUIRED)
 	@NotBlank
 	private String note;
 
-	@Schema(description = "Category of Quotation Request", example = "3601", requiredMode = REQUIRED)
+	@Schema(description = "Category of Quotation Request", examples = "3601", requiredMode = REQUIRED)
 	@NotBlank
 	private String helpdeskId;
 
-	@Schema(description = "Where the Quotation Request should end up", example = "2701", requiredMode = REQUIRED)
+	@Schema(description = "Where the Quotation Request should end up", examples = "2701", requiredMode = REQUIRED)
 	@NotBlank
 	private String officeId;
 

@@ -6,10 +6,10 @@ import java.util.Objects;
 @Schema(description = "Model for MetaData")
 public class MetaData {
 
-	@Schema(description = "Name", example = "Blåberget")
+	@Schema(description = "Name", examples = "Blåberget")
 	private String name;
 
-	@Schema(description = "Id", example = "123231123")
+	@Schema(description = "Id", examples = "123231123")
 	private String id;
 
 	public static MetaData create() {
