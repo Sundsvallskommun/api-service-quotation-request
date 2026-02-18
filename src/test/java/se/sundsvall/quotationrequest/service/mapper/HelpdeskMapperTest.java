@@ -1,13 +1,13 @@
 package se.sundsvall.quotationrequest.service.mapper;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static se.sundsvall.quotationrequest.service.mapper.HelpdeskMapper.RECEIVEDTHROUGH;
-import static wiremock.com.github.jknack.handlebars.internal.lang3.math.NumberUtils.toInt;
-
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import org.junit.jupiter.api.Test;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static se.sundsvall.quotationrequest.service.mapper.HelpdeskMapper.RECEIVEDTHROUGH;
+import static wiremock.com.github.jknack.handlebars.internal.lang3.math.NumberUtils.toInt;
 
 class HelpdeskMapperTest {
 

@@ -1,7 +1,5 @@
 package se.sundsvall.quotationrequest.integration.lime.configuration;
 
-import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import feign.RequestInterceptor;
@@ -21,6 +19,8 @@ import se.sundsvall.dept44.configuration.feign.FeignMultiCustomizer;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder.JsonPathSetup;
 import se.sundsvall.quotationrequest.integration.lime.configuration.mixin.IdMixIn;
+
+import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 
 @Import(FeignConfiguration.class)
 public class LimeConfiguration {

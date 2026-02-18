@@ -1,13 +1,13 @@
 package se.sundsvall.quotationrequest.service.mapper;
 
-import static generated.se.sundsvall.seab.lime.Receivedthrough.KeyEnum.FORM;
-import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
-import static org.apache.commons.lang3.math.NumberUtils.toInt;
-
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Receivedthrough;
 import java.util.Optional;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
+
+import static generated.se.sundsvall.seab.lime.Receivedthrough.KeyEnum.FORM;
+import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
+import static org.apache.commons.lang3.math.NumberUtils.toInt;
 
 public final class HelpdeskMapper {
 

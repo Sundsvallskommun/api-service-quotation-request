@@ -1,10 +1,5 @@
 package se.sundsvall.quotationrequest.api;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.springframework.http.MediaType.APPLICATION_JSON;
-
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +10,11 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import se.sundsvall.quotationrequest.Application;
 import se.sundsvall.quotationrequest.api.model.MetaDataResponse;
 import se.sundsvall.quotationrequest.service.MetaDataService;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("junit")

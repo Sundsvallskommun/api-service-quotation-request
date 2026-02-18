@@ -1,13 +1,13 @@
 package se.sundsvall.quotationrequest.service.mapper;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.groups.Tuple.tuple;
-
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import se.sundsvall.quotationrequest.api.model.MetaData;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.groups.Tuple.tuple;
 
 class MetaDataMapperTest {
 
