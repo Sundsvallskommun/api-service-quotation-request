@@ -1,8 +1,5 @@
 package se.sundsvall.quotationrequest.service.mapper;
 
-import static java.util.Collections.emptyList;
-import static org.springframework.hateoas.CollectionModel.empty;
-
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
 import java.util.List;
@@ -10,6 +7,9 @@ import java.util.Optional;
 import org.springframework.hateoas.CollectionModel;
 import se.sundsvall.quotationrequest.api.model.MetaData;
 import se.sundsvall.quotationrequest.api.model.MetaDataResponse;
+
+import static java.util.Collections.emptyList;
+import static org.springframework.hateoas.CollectionModel.empty;
 
 public final class MetaDataMapper {
 
