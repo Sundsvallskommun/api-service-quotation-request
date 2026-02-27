@@ -12,10 +12,10 @@ import org.springframework.hateoas.CollectionModel;
 import se.sundsvall.quotationrequest.integration.lime.LimeIntegration;
 
 import static java.util.Collections.emptyList;
+import static org.apache.commons.lang3.math.NumberUtils.toInt;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static wiremock.com.github.jknack.handlebars.internal.lang3.math.NumberUtils.toInt;
 
 @ExtendWith(MockitoExtension.class)
 class MetaDataServiceTest {

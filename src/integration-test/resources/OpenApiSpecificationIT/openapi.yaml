@@ -7,28 +7,28 @@ info:
     url: https://opensource.org/licenses/MIT
   version: "2.0"
 servers:
-  - url: http://localhost:65086
-    description: Generated server url
+- url: http://localhost:61562
+  description: Generated server url
 tags:
-  - name: MetaData
-    description: MetaData operations
-  - name: QuotationRequest
-    description: QuotationRequest operations
+- name: MetaData
+  description: MetaData operations
+- name: QuotationRequest
+  description: QuotationRequest operations
 paths:
   /{municipalityId}/quotation-request:
     post:
       tags:
-        - QuotationRequest
+      - QuotationRequest
       summary: Create a QuotationRequest
       operationId: createQuotationRequest
       parameters:
-        - name: municipalityId
-          in: path
-          description: Municipality id
-          required: true
-          schema:
-            type: string
-          example: 2281
+      - name: municipalityId
+        in: path
+        description: Municipality id
+        required: true
+        schema:
+          type: string
+        example: 2281
       requestBody:
         content:
           application/json:
@@ -49,8 +49,8 @@ paths:
             application/problem+json:
               schema:
                 oneOf:
-                  - $ref: "#/components/schemas/Problem"
-                  - $ref: "#/components/schemas/ConstraintViolationProblem"
+                - $ref: "#/components/schemas/Problem"
+                - $ref: "#/components/schemas/ConstraintViolationProblem"
         "404":
           description: Not Found
           content:
@@ -72,17 +72,17 @@ paths:
   /{municipalityId}/meta-data:
     get:
       tags:
-        - MetaData
+      - MetaData
       summary: Get MetaData
       operationId: getMetaData
       parameters:
-        - name: municipalityId
-          in: path
-          description: Municipality id
-          required: true
-          schema:
-            type: string
-          example: 2281
+      - name: municipalityId
+        in: path
+        description: Municipality id
+        required: true
+        schema:
+          type: string
+        example: 2281
       responses:
         "200":
           description: Successful operation
@@ -96,8 +96,8 @@ paths:
             application/problem+json:
               schema:
                 oneOf:
-                  - $ref: "#/components/schemas/Problem"
-                  - $ref: "#/components/schemas/ConstraintViolationProblem"
+                - $ref: "#/components/schemas/Problem"
+                - $ref: "#/components/schemas/ConstraintViolationProblem"
         "500":
           description: Internal Server error
           content:
@@ -113,7 +113,7 @@ paths:
   /api-docs:
     get:
       tags:
-        - API
+      - API
       summary: OpenAPI
       operationId: getApiDocs
       responses:
@@ -131,8 +131,6 @@ components:
     Problem:
       type: object
       properties:
-        status:
-          $ref: "#/components/schemas/StatusType"
         title:
           type: string
         detail:
@@ -143,174 +141,48 @@ components:
         type:
           type: string
           format: uri
-        parameters:
-          type: object
-          additionalProperties: {}
-    StatusType:
-      type: object
-      properties:
-        statusCode:
+        status:
           type: integer
           format: int32
-        reasonPhrase:
-          type: string
     ConstraintViolationProblem:
       type: object
       properties:
-        cause:
-          $ref: "#/components/schemas/ThrowableProblem"
-        stackTrace:
-          type: array
-          items:
-            type: object
-            properties:
-              classLoaderName:
-                type: string
-              moduleName:
-                type: string
-              moduleVersion:
-                type: string
-              methodName:
-                type: string
-              fileName:
-                type: string
-              lineNumber:
-                type: integer
-                format: int32
-              className:
-                type: string
-              nativeMethod:
-                type: boolean
         type:
           type: string
           format: uri
         status:
-          $ref: "#/components/schemas/StatusType"
+          type: integer
+          format: int32
         violations:
           type: array
           items:
             $ref: "#/components/schemas/Violation"
         title:
           type: string
-        message:
-          type: string
+        causeAsProblem:
+          $ref: "#/components/schemas/ThrowableProblem"
         detail:
           type: string
         instance:
           type: string
           format: uri
-        parameters:
-          type: object
-          additionalProperties: {}
-        suppressed:
-          type: array
-          items:
-            type: object
-            properties:
-              stackTrace:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    classLoaderName:
-                      type: string
-                    moduleName:
-                      type: string
-                    moduleVersion:
-                      type: string
-                    methodName:
-                      type: string
-                    fileName:
-                      type: string
-                    lineNumber:
-                      type: integer
-                      format: int32
-                    className:
-                      type: string
-                    nativeMethod:
-                      type: boolean
-              message:
-                type: string
-              localizedMessage:
-                type: string
-        localizedMessage:
-          type: string
     ThrowableProblem:
       type: object
       properties:
-        cause: {}
-        stackTrace:
-          type: array
-          items:
-            type: object
-            properties:
-              classLoaderName:
-                type: string
-              moduleName:
-                type: string
-              moduleVersion:
-                type: string
-              methodName:
-                type: string
-              fileName:
-                type: string
-              lineNumber:
-                type: integer
-                format: int32
-              className:
-                type: string
-              nativeMethod:
-                type: boolean
-        message:
+        type:
           type: string
-        status:
-          $ref: "#/components/schemas/StatusType"
+          format: uri
         title:
           type: string
+        status:
+          type: integer
+          format: int32
         detail:
           type: string
         instance:
           type: string
           format: uri
-        type:
-          type: string
-          format: uri
-        parameters:
-          type: object
-          additionalProperties: {}
-        suppressed:
-          type: array
-          items:
-            type: object
-            properties:
-              stackTrace:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    classLoaderName:
-                      type: string
-                    moduleName:
-                      type: string
-                    moduleVersion:
-                      type: string
-                    methodName:
-                      type: string
-                    fileName:
-                      type: string
-                    lineNumber:
-                      type: integer
-                      format: int32
-                    className:
-                      type: string
-                    nativeMethod:
-                      type: boolean
-              message:
-                type: string
-              localizedMessage:
-                type: string
-        localizedMessage:
-          type: string
+        causeAsProblem: {}
     Violation:
       type: object
       properties:
@@ -326,32 +198,28 @@ components:
           type: string
           description: First Name
           examples:
-            - Joe
-          minLength: 1
+          - Joe
         surname:
           type: string
           description: Surname
           examples:
-            - Doe
-          minLength: 1
+          - Doe
         phoneNumber:
           type: string
           description: Phone Number
           examples:
-            - 079 1234567
-          minLength: 1
+          - 079 1234567
         emailAddress:
           type: string
           format: email
           description: Email Address
           examples:
-            - joe.doe@test.se
-          minLength: 1
+          - joe.doe@test.se
       required:
-        - emailAddress
-        - firstName
-        - phoneNumber
-        - surname
+      - emailAddress
+      - firstName
+      - phoneNumber
+      - surname
     QuotationRequest:
       type: object
       description: QuotationRequest creation request model
@@ -360,34 +228,30 @@ components:
           type: string
           description: Title of Quotation Request
           examples:
-            - Installation av elnät
-          minLength: 1
+          - Installation av elnät
         note:
           type: string
           description: Description of Quotation Request
           examples:
-            - Beskrivning av installationen
-          minLength: 1
+          - Beskrivning av installationen
         helpdeskId:
           type: string
           description: Category of Quotation Request
           examples:
-            - "3601"
-          minLength: 1
+          - "3601"
         officeId:
           type: string
           description: Where the Quotation Request should end up
           examples:
-            - "2701"
-          minLength: 1
+          - "2701"
         contactDetails:
           $ref: "#/components/schemas/ContactDetails"
       required:
-        - contactDetails
-        - helpdeskId
-        - note
-        - officeId
-        - title
+      - contactDetails
+      - helpdeskId
+      - note
+      - officeId
+      - title
     MetaData:
       type: object
       description: Model for MetaData
@@ -396,12 +260,12 @@ components:
           type: string
           description: Name
           examples:
-            - Blåberget
+          - Blåberget
         id:
           type: string
           description: Id
           examples:
-            - "123231123"
+          - "123231123"
     MetaDataResponse:
       type: object
       description: Model for MetaData Response

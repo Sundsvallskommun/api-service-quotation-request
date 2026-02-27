@@ -29,7 +29,8 @@ cd api-service-quotation-request
 
 3. **Ensure dependent services are running:**
 
-   If this microservice depends on other services, make sure they are up and accessible. See [Dependencies](#dependencies) for more details.
+   If this microservice depends on other services, make sure they are up and accessible.
+   See [Dependencies](#dependencies) for more details.
 
 4. **Build and run the application:**
 
@@ -47,7 +48,8 @@ gradle bootRun
 
 ## Dependencies
 
-This microservice does not depend on any other internal services. However, it does depend on external services for the provider(s) it intends to use:
+This microservice does not depend on any other internal services. However, it does depend on external services for the
+provider(s) it intends to use:
 
 - **Lime**
   - **Purpose:** CRM system (Stadsbacken customers)
@@ -89,7 +91,8 @@ curl -X 'POST' \
 
 ## Configuration
 
-Configuration is crucial for the application to run successfully. Ensure all necessary settings are configured in `application.yml`.
+Configuration is crucial for the application to run successfully. Ensure all necessary settings are configured in
+`application.yml`.
 
 ### Key Configuration Parameters
 

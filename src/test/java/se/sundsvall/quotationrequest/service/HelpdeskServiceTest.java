@@ -5,7 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.zalando.problem.ThrowableProblem;
+import se.sundsvall.dept44.problem.ThrowableProblem;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
 import se.sundsvall.quotationrequest.integration.lime.LimeIntegration;
@@ -16,7 +16,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.zalando.problem.Status.NOT_FOUND;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static se.sundsvall.quotationrequest.service.Constants.ERROR_HELPDESK_CATEGORY_NOT_FOUND;
 import static se.sundsvall.quotationrequest.service.Constants.ERROR_OFFICE_NOT_FOUND;
 

@@ -4,12 +4,13 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.zalando.problem.Problem;
-import org.zalando.problem.violations.ConstraintViolationProblem;
-import org.zalando.problem.violations.Violation;
+import se.sundsvall.dept44.problem.Problem;
+import se.sundsvall.dept44.problem.violations.ConstraintViolationProblem;
+import se.sundsvall.dept44.problem.violations.Violation;
 import se.sundsvall.quotationrequest.Application;
 import se.sundsvall.quotationrequest.api.model.ContactDetails;
 import se.sundsvall.quotationrequest.api.model.QuotationRequest;
@@ -18,10 +19,11 @@ import se.sundsvall.quotationrequest.service.HelpdeskService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.groups.Tuple.tuple;
 import static org.mockito.Mockito.verifyNoInteractions;
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON;
-import static org.zalando.problem.Status.BAD_REQUEST;
 
+@AutoConfigureWebTestClient
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("junit")
 class QuotationRequestResourceFailuresTest {
@@ -53,8 +55,7 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response).isNotNull();
 		assertThat(response.getTitle()).isEqualTo(BAD_REQUEST.getReasonPhrase());
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
-		assertThat(response.getDetail()).isEqualTo(
-			"Required request body is missing: org.springframework.http.ResponseEntity<java.lang.Void> se.sundsvall.quotationrequest.api.QuotationRequestResource.createQuotationRequest(java.lang.String,se.sundsvall.quotationrequest.api.model.QuotationRequest)");
+		assertThat(response.getDetail()).isEqualTo("Failed to read request");
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
@@ -78,8 +79,8 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
 		assertThat(response.getViolations())
-			.extracting(Violation::getField, Violation::getMessage)
-			.containsExactly(
+			.extracting(Violation::field, Violation::message)
+			.containsExactlyInAnyOrder(
 				tuple("contactDetails", "must not be null"),
 				tuple("helpdeskId", "must not be blank"),
 				tuple("note", "must not be blank"),
@@ -116,8 +117,8 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
 		assertThat(response.getViolations())
-			.extracting(Violation::getField, Violation::getMessage)
-			.containsExactly(
+			.extracting(Violation::field, Violation::message)
+			.containsExactlyInAnyOrder(
 				tuple("contactDetails.emailAddress", "must not be blank"),
 				tuple("contactDetails.firstName", "must not be blank"),
 				tuple("contactDetails.phoneNumber", "must not be blank"),
@@ -157,8 +158,8 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
 		assertThat(response.getViolations())
-			.extracting(Violation::getField, Violation::getMessage)
-			.containsExactly(
+			.extracting(Violation::field, Violation::message)
+			.containsExactlyInAnyOrder(
 				tuple("contactDetails.emailAddress", "must be a well-formed email address"));
 
 		verifyNoInteractions(helpdeskServiceMock);
@@ -196,8 +197,8 @@ class QuotationRequestResourceFailuresTest {
 		assertThat(response.getTitle()).isEqualTo("Constraint Violation");
 		assertThat(response.getStatus()).isEqualTo(BAD_REQUEST);
 		assertThat(response.getViolations())
-			.extracting(Violation::getField, Violation::getMessage)
-			.containsExactly(tuple("createQuotationRequest.municipalityId", "not a valid municipality ID"));
+			.extracting(Violation::field, Violation::message)
+			.containsExactlyInAnyOrder(tuple("createQuotationRequest.municipalityId", "not a valid municipality ID"));
 
 		verifyNoInteractions(helpdeskServiceMock);
 	}
