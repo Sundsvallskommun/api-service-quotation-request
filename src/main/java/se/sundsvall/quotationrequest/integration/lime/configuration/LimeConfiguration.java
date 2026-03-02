@@ -1,26 +1,26 @@
 package se.sundsvall.quotationrequest.integration.lime.configuration;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import feign.RequestInterceptor;
 import feign.codec.Decoder;
 import feign.codec.ErrorDecoder;
-import feign.jackson.JacksonDecoder;
 import generated.se.sundsvall.seab.lime.Helpdesk;
 import generated.se.sundsvall.seab.lime.Helpdeskcategory;
 import generated.se.sundsvall.seab.lime.Office;
+import java.io.IOException;
 import org.springframework.cloud.openfeign.FeignBuilderCustomizer;
 import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
-import org.springframework.hateoas.mediatype.hal.Jackson2HalModule;
+import org.springframework.hateoas.mediatype.hal.HalJacksonModule;
 import se.sundsvall.dept44.configuration.feign.FeignConfiguration;
 import se.sundsvall.dept44.configuration.feign.FeignMultiCustomizer;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder;
 import se.sundsvall.dept44.configuration.feign.decoder.JsonPathErrorDecoder.JsonPathSetup;
 import se.sundsvall.quotationrequest.integration.lime.configuration.mixin.IdMixIn;
+import tools.jackson.databind.json.JsonMapper;
 
-import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static tools.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 
 @Import(FeignConfiguration.class)
 public class LimeConfiguration {
@@ -49,14 +49,27 @@ public class LimeConfiguration {
 	}
 
 	Decoder feignHalDecoder() {
-		final var mapper = new ObjectMapper()
+		final var mapper = JsonMapper.builder()
 			.addMixIn(Helpdeskcategory.class, IdMixIn.class)
 			.addMixIn(Office.class, IdMixIn.class)
 			.addMixIn(Helpdesk.class, IdMixIn.class)
-			.configure(FAIL_ON_UNKNOWN_PROPERTIES, false)
-			.registerModule(new JavaTimeModule())
-			.registerModule(new Jackson2HalModule());
+			.disable(FAIL_ON_UNKNOWN_PROPERTIES)
+			.addModule(new HalJacksonModule())
+			.build();
 
-		return new ResponseEntityDecoder(new JacksonDecoder(mapper));
+		return new ResponseEntityDecoder(jackson3Decoder(mapper));
+	}
+
+	private static Decoder jackson3Decoder(final JsonMapper mapper) {
+		return (response, type) -> {
+			if (response.status() == 404 || response.status() == 204 || response.body() == null) {
+				return null;
+			}
+			try (final var reader = response.body().asReader(UTF_8)) {
+				return mapper.readValue(reader, mapper.constructType(type));
+			} catch (final IOException e) {
+				throw new IOException("Failed to decode response body", e);
+			}
+		};
 	}
 }
