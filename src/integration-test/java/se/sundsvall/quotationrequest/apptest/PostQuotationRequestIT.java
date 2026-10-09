@@ -1,5 +1,12 @@
 package se.sundsvall.quotationrequest.apptest;
 
+import java.util.List;
+import java.util.Map.Entry;
+import org.junit.jupiter.api.Test;
+import se.sundsvall.dept44.test.AbstractAppTest;
+import se.sundsvall.dept44.test.annotation.wiremock.WireMockAppTestSuite;
+import se.sundsvall.quotationrequest.Application;
+
 import static java.util.Map.entry;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.HttpMethod.POST;
@@ -7,15 +14,6 @@ import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.MediaType.ALL_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE;
-
-import java.util.List;
-import java.util.Map.Entry;
-
-import org.junit.jupiter.api.Test;
-
-import se.sundsvall.dept44.test.AbstractAppTest;
-import se.sundsvall.dept44.test.annotation.wiremock.WireMockAppTestSuite;
-import se.sundsvall.quotationrequest.Application;
 
 /**
  * Post QuotationRequest tests.
