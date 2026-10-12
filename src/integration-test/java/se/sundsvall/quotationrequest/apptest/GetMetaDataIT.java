@@ -1,19 +1,17 @@
 package se.sundsvall.quotationrequest.apptest;
 
+import java.util.List;
+import java.util.Map.Entry;
+import org.junit.jupiter.api.Test;
+import se.sundsvall.dept44.test.AbstractAppTest;
+import se.sundsvall.dept44.test.annotation.wiremock.WireMockAppTestSuite;
+import se.sundsvall.quotationrequest.Application;
+
 import static java.util.Map.entry;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
-import java.util.List;
-import java.util.Map.Entry;
-
-import org.junit.jupiter.api.Test;
-
-import se.sundsvall.dept44.test.AbstractAppTest;
-import se.sundsvall.dept44.test.annotation.wiremock.WireMockAppTestSuite;
-import se.sundsvall.quotationrequest.Application;
 
 /**
  * Get MetaData tests.
